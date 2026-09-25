@@ -1,0 +1,398 @@
+{
+  "style": "Professional e-commerce product photography, soft studio lighting, high detail, realistic artificial silk flowers, no text, no logos, no watermark.",
+  "images": [
+    {
+      "key": "hero-bouquet",
+      "file": "hero-bouquet.svg",
+      "size": "1536x1024",
+      "background": "transparent",
+      "bg": "#c7a6e8",
+      "label": "Ramo héroe",
+      "prompt": "A large lush bouquet of artificial red and pink silk roses with baby's breath, wrapped in lilac paper with a satin ribbon, next to an elegant open gift box, a few rose petals floating in the air, isolated on a transparent background, front view, cheerful premium look."
+    },
+    {
+      "key": "hero-card-ramos",
+      "file": "hero-card-ramos.svg",
+      "size": "1024x1024",
+      "bg": "#cfe3f3",
+      "label": "Ramos eternos",
+      "prompt": "Flat lay of a bouquet of artificial pastel roses and eucalyptus on a light sky-blue background, a few loose petals scattered, top-down view, soft shadows."
+    },
+    {
+      "key": "hero-card-cajas",
+      "file": "hero-card-cajas.svg",
+      "size": "1024x1024",
+      "bg": "#9fcf7f",
+      "label": "Cajas de regalo",
+      "prompt": "Row of round luxury hat boxes filled with artificial roses in different colors on a split green and cream background, playful studio product shot."
+    },
+    {
+      "key": "hero-card-peluches",
+      "file": "hero-card-peluches.svg",
+      "size": "1024x1024",
+      "bg": "#eaa6a6",
+      "label": "Peluches y detalles",
+      "prompt": "A cute small teddy bear holding an artificial red rose, with a tiny heart-shaped gift box beside it, on a soft pink background with a pink floor, minimal studio shot."
+    },
+    {
+      "key": "hero-card-hogar",
+      "file": "hero-card-hogar.svg",
+      "size": "1024x1024",
+      "bg": "#a9dcc0",
+      "label": "Arreglos para el hogar",
+      "prompt": "Top-down view of an artificial white orchid in a ceramic pot and a small vase of artificial lavender on a mint green background, decorative ribbons around, playful composition."
+    },
+    {
+      "key": "p-caja-rosas-rojas",
+      "file": "p-caja-rosas-rojas.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Caja rosas rojas",
+      "prompt": "A round black luxury box filled with nine artificial red roses, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-girasoles",
+      "file": "p-girasoles.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Ramo girasoles",
+      "prompt": "A bouquet of artificial sunflowers wrapped in kraft paper with a twine bow, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-oso-rosa",
+      "file": "p-oso-rosa.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Oso con rosa",
+      "prompt": "A soft beige teddy bear plush sitting and holding a single artificial red rose, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-orquidea",
+      "file": "p-orquidea.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Orquídea blanca",
+      "prompt": "An artificial white phalaenopsis orchid in a white glossy ceramic pot, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-caja-sorpresa",
+      "file": "p-caja-sorpresa.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Caja sorpresa",
+      "prompt": "An open pink gift box with tissue paper, a small bouquet of artificial pink roses, chocolates and a heart balloon, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-tulipanes",
+      "file": "p-tulipanes.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Ramo tulipanes",
+      "prompt": "A bouquet of artificial pink tulips tied with a satin ribbon, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-rosa-cupula",
+      "file": "p-rosa-cupula.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Rosa en cúpula",
+      "prompt": "A single artificial red rose inside a glass dome on a wooden base with warm LED fairy lights, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-corazon-rosas",
+      "file": "p-corazon-rosas.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Corazón de rosas",
+      "prompt": "A heart-shaped box densely filled with artificial red and pink roses, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-taza",
+      "file": "p-taza.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Taza con flores",
+      "prompt": "A white ceramic mug with a small arrangement of artificial pink flowers inside, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-vela",
+      "file": "p-vela.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Vela aromática",
+      "prompt": "A scented candle in a frosted glass jar decorated with small artificial dried flowers around it, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-chocolates",
+      "file": "p-chocolates.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Flores y chocolates",
+      "prompt": "An elegant open box combining artificial roses on one side and gourmet chocolates on the other, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-globo",
+      "file": "p-globo.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Globo corazón",
+      "prompt": "A red metallic heart-shaped foil balloon tied to a small bouquet of artificial white roses, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "p-lampara",
+      "file": "p-lampara.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Lámpara floral",
+      "prompt": "A decorative LED table lamp shaped like a bouquet of artificial glowing tulips, isolated on pure white background, centered, product photo."
+    },
+    {
+      "key": "promo-elegancia",
+      "file": "promo-elegancia.svg",
+      "size": "1024x1024",
+      "bg": "#d59ad6",
+      "label": "Elegancia",
+      "prompt": "An elegant arrangement of artificial pink and white roses and orchids in a glass vase, surrounded by floating petals and ribbons, on a vibrant pink and turquoise gradient background, playful editorial studio photo."
+    },
+    {
+      "key": "promo-celebra",
+      "file": "promo-celebra.svg",
+      "size": "1536x1024",
+      "bg": "#2f8c77",
+      "label": "Celebra",
+      "prompt": "A festive composition with a big bouquet of artificial colorful flowers, a teddy bear, gift boxes and heart balloons, with confetti and petals flying in the air, on a deep teal green background with a diagonal light stripe, playful editorial studio photo."
+    },
+    {
+      "key": "feature-pareja",
+      "file": "feature-pareja.svg",
+      "size": "1024x768",
+      "bg": "#e9d7c7",
+      "label": "Para tu pareja",
+      "prompt": "A young couple smiling at home in a cozy living room, one person giving the other a bouquet of artificial red roses and a small gift box, warm natural light, lifestyle photo."
+    },
+    {
+      "key": "cat-rosas",
+      "file": "cat-rosas.svg",
+      "size": "1024x1024",
+      "bg": "#f3c9d3",
+      "label": "Rosas",
+      "prompt": "A lush arrangement of artificial red and pink roses in a cozy bright living room, close-up lifestyle photo."
+    },
+    {
+      "key": "cat-girasoles",
+      "file": "cat-girasoles.svg",
+      "size": "1024x1024",
+      "bg": "#f6e2a0",
+      "label": "Girasoles",
+      "prompt": "Artificial sunflowers in a rustic vase on a wooden table next to a window, bright lifestyle photo."
+    },
+    {
+      "key": "cat-tulipanes",
+      "file": "cat-tulipanes.svg",
+      "size": "1024x1024",
+      "bg": "#f7cfe0",
+      "label": "Tulipanes",
+      "prompt": "Artificial pastel tulips in a glass vase on a shelf in a bright home, lifestyle photo."
+    },
+    {
+      "key": "cat-orquideas",
+      "file": "cat-orquideas.svg",
+      "size": "1024x1024",
+      "bg": "#e6dcf3",
+      "label": "Orquídeas",
+      "prompt": "Artificial purple and white orchids in ceramic pots on a light table, lifestyle photo."
+    },
+    {
+      "key": "cat-cajas",
+      "file": "cat-cajas.svg",
+      "size": "1024x1024",
+      "bg": "#d7c3ae",
+      "label": "Cajas de regalo",
+      "prompt": "Several luxury flower boxes with artificial roses and ribbons on a table, top-down photo."
+    },
+    {
+      "key": "cat-peluches",
+      "file": "cat-peluches.svg",
+      "size": "1024x1024",
+      "bg": "#c9c3d6",
+      "label": "Peluches",
+      "prompt": "Soft teddy bears holding artificial flowers sitting on a fluffy grey blanket, cozy photo."
+    },
+    {
+      "key": "cat-globos",
+      "file": "cat-globos.svg",
+      "size": "1024x1024",
+      "bg": "#bfe0c4",
+      "label": "Globos",
+      "prompt": "Colorful heart and round foil balloons tied to a bouquet of artificial flowers in a garden, festive photo."
+    },
+    {
+      "key": "look-sala",
+      "file": "look-sala.svg",
+      "size": "1536x1024",
+      "bg": "#a7b39a",
+      "label": "Arma el regalo perfecto",
+      "prompt": "A cozy modern living room with a coffee table styled with a large bouquet of artificial roses, a gift box, a scented candle and a teddy bear, plants and a window in the background, warm soft light, wide interior lifestyle photo."
+    },
+    {
+      "key": "p-caja-rosas-rojas-alt",
+      "file": "p-caja-rosas-rojas-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Caja rosas rojas (detalle)",
+      "prompt": "A round black luxury box filled with nine artificial red roses, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-girasoles-alt",
+      "file": "p-girasoles-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Ramo girasoles (detalle)",
+      "prompt": "A bouquet of artificial sunflowers wrapped in kraft paper with a twine bow, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-oso-rosa-alt",
+      "file": "p-oso-rosa-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Oso con rosa (detalle)",
+      "prompt": "A soft beige teddy bear plush sitting and holding a single artificial red rose, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-orquidea-alt",
+      "file": "p-orquidea-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Orquídea blanca (detalle)",
+      "prompt": "An artificial white phalaenopsis orchid in a white glossy ceramic pot, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-caja-sorpresa-alt",
+      "file": "p-caja-sorpresa-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Caja sorpresa (detalle)",
+      "prompt": "An open pink gift box with tissue paper, a small bouquet of artificial pink roses, chocolates and a heart balloon, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-tulipanes-alt",
+      "file": "p-tulipanes-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Ramo tulipanes (detalle)",
+      "prompt": "A bouquet of artificial pink tulips tied with a satin ribbon, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-rosa-cupula-alt",
+      "file": "p-rosa-cupula-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Rosa en cúpula (detalle)",
+      "prompt": "A single artificial red rose inside a glass dome on a wooden base with warm LED fairy lights, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-corazon-rosas-alt",
+      "file": "p-corazon-rosas-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Corazón de rosas (detalle)",
+      "prompt": "A heart-shaped box densely filled with artificial red and pink roses, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-taza-alt",
+      "file": "p-taza-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Taza con flores (detalle)",
+      "prompt": "A white ceramic mug with a small arrangement of artificial pink flowers inside, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-vela-alt",
+      "file": "p-vela-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Vela aromática (detalle)",
+      "prompt": "A scented candle in a frosted glass jar decorated with small artificial dried flowers around it, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-chocolates-alt",
+      "file": "p-chocolates-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Flores y chocolates (detalle)",
+      "prompt": "An elegant open box combining artificial roses on one side and gourmet chocolates on the other, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-globo-alt",
+      "file": "p-globo-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Globo corazón (detalle)",
+      "prompt": "A red metallic heart-shaped foil balloon tied to a small bouquet of artificial white roses, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "p-lampara-alt",
+      "file": "p-lampara-alt.svg",
+      "size": "1024x1024",
+      "bg": "#ffffff",
+      "label": "Lámpara floral (detalle)",
+      "prompt": "A decorative LED table lamp shaped like a bouquet of artificial glowing tulips, isolated on pure white background, close-up detail from a three-quarter angle, product photo."
+    },
+    {
+      "key": "col-amigos",
+      "file": "col-amigos.svg",
+      "size": "1536x1024",
+      "bg": "#f2c9a8",
+      "label": "Para amigos",
+      "prompt": "Two smiling friends at a bright cafe table, one giving the other a colorful bouquet of artificial sunflowers and a small gift box, warm natural light, lifestyle photo, wide composition with the subject on the right."
+    },
+    {
+      "key": "col-familia",
+      "file": "col-familia.svg",
+      "size": "1536x1024",
+      "bg": "#e8d3e6",
+      "label": "Para la familia",
+      "prompt": "A happy family moment at home, a child giving their mother a pastel bouquet of artificial tulips, cozy bright living room, lifestyle photo, wide composition with the subject on the right."
+    },
+    {
+      "key": "contact-hero",
+      "file": "contact-hero.svg",
+      "size": "1536x1024",
+      "bg": "#b98aa8",
+      "label": "Contacto",
+      "prompt": "A dreamy wide photo of a bouquet of artificial pink and red roses on a table by a sunny window with soft bokeh background, warm golden light, space in the center for text, cinematic."
+    },
+    {
+      "key": "contact-form",
+      "file": "contact-form.svg",
+      "size": "1024x1024",
+      "bg": "#c8dcef",
+      "label": "Escríbenos",
+      "prompt": "A smiling florist arranging artificial flowers in a bright boutique flower shop, holding a phone, soft natural light, lifestyle photo."
+    },
+    {
+      "key": "stores-intro",
+      "file": "stores-intro.svg",
+      "size": "1024x768",
+      "bg": "#f1dbe5",
+      "label": "Nuestra tienda",
+      "prompt": "Interior of a bright modern boutique selling artificial flowers and gifts, wooden shelves with bouquets, gift boxes and teddy bears, a friendly staff member helping a customer, warm lighting, lifestyle photo."
+    },
+    {
+      "key": "store-miraflores",
+      "file": "store-miraflores.svg",
+      "size": "1024x1024",
+      "bg": "#e9c7d6",
+      "label": "Miraflores",
+      "prompt": "Storefront of a small elegant flower and gift boutique with a pink facade and window displays of artificial roses, in a sunny Lima Miraflores street, photo."
+    },
+    {
+      "key": "store-sanisidro",
+      "file": "store-sanisidro.svg",
+      "size": "1024x1024",
+      "bg": "#d9d0ee",
+      "label": "San Isidro",
+      "prompt": "A customer holding a bouquet of artificial sunflowers inside a cozy gift shop full of flowers and teddy bears, warm light, lifestyle photo."
+    }
+  ]
+}

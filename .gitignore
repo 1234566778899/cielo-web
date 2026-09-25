@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+!.env.example
+
+# El panel admin vive en su propio repositorio (cielo-admin)
+/admin/
