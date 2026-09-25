@@ -15,7 +15,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
               onClick={() => setActive(i)}
               aria-label={`Ver imagen ${i + 1}`}
               aria-current={active === i}
-              className={`relative block size-[82px] overflow-hidden rounded-[5px] border md:size-[93px] ${active === i ? "border-magenta" : "border-[#dfdfdf] hover:border-muted"}`}
+              className={`relative block size-[82px] overflow-hidden rounded-[5px] border md:size-[93px] ${active === i ? "border-cielo" : "border-[#dfdfdf] hover:border-muted"}`}
             >
               <SmartImage src={src} alt="" fill sizes="93px" className="object-contain p-1.5" />
             </button>

@@ -9,12 +9,12 @@ import { mainNav as nav, secondaryNav } from "./nav";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-magenta text-white">
+    <header className="sticky top-0 z-40 border-b border-ocean/10 bg-white text-ocean lg:border-b-0">
       <div className="container-page">
         {/* Móvil: menú + logo + cuenta/carrito y el buscador en una segunda fila. */}
         <div className="flex flex-wrap items-center gap-x-2.5 pt-5 pb-[21px] md:h-[81px] md:flex-nowrap md:gap-6 md:pt-[15px] md:pb-0 lg:gap-[45px]">
           <MobileMenu />
-          <Logo size="text-[24px] sm:text-[29px]" markClassName="text-navy max-sm:size-7" />
+          <Logo className="h-9 sm:h-11 md:h-[50px]" priority />
           <HeaderSearch className="order-last mt-1.5 w-full md:order-none md:mt-0 md:w-auto md:flex-1" />
           <a
             href={whatsappUrl()}
@@ -31,18 +31,21 @@ export function Header() {
             <ChevronDown className="mb-4 ml-[5px] size-[18px]" strokeWidth={1.5} />
           </a>
           <div className="ml-auto flex items-center gap-2.5 xl:ml-0">
-            <Link href="/cuenta" aria-label="Mi cuenta" className="grid size-[46px] place-items-center rounded-[5px] border border-white/30 hover:bg-white/10">
+            <Link href="/cuenta" aria-label="Mi cuenta" className="grid size-[46px] place-items-center rounded-[5px] border border-ocean/25 hover:bg-mist">
               <User className="size-5" strokeWidth={1.4} />
             </Link>
             <HeaderCart />
           </div>
         </div>
-        <nav className="hidden h-[57px] items-center justify-between text-[15px] uppercase lg:flex">
+      </div>
+      {/* Menú principal en una franja celeste, bajo el logo. */}
+      <div className="hidden bg-cielo text-white lg:block">
+        <nav className="container-page flex h-[57px] items-center justify-between text-[15px] uppercase">
           <ul className="flex items-center gap-5">
             {nav.map((item) => (
               <li key={item.label} className="group relative">
                 {item.badge && (
-                  <span className="absolute -top-[30px] left-1/2 -translate-x-1/2 rounded-[5px] bg-sun px-1.5 py-0.5 text-[11px] leading-tight text-ink after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-x-4 after:border-t-4 after:border-x-transparent after:border-t-sun">
+                  <span className="absolute -top-[19px] left-1/2 -translate-x-1/2 rounded-[5px] bg-sun px-1.5 py-0.5 text-[11px] leading-tight text-ink after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-x-4 after:border-t-4 after:border-x-transparent after:border-t-sun">
                     {item.badge}
                   </span>
                 )}
@@ -56,7 +59,7 @@ export function Header() {
                     <ul className="invisible absolute top-full left-0 z-10 min-w-[220px] rounded-[5px] bg-white py-2 text-[14px] normal-case text-ink opacity-0 shadow-[0_8px_30px_rgba(0,0,0,.15)] transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                       {item.children.map((c) => (
                         <li key={c.label}>
-                          <Link href={c.href} className="block px-4 py-2 hover:bg-[#fdf3f8] hover:text-magenta">{c.label}</Link>
+                          <Link href={c.href} className="block px-4 py-2 hover:bg-mist hover:text-cielo">{c.label}</Link>
                         </li>
                       ))}
                     </ul>

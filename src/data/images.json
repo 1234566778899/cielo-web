@@ -1,46 +1,46 @@
 {
-  "style": "Professional e-commerce product photography, soft studio lighting, high detail, realistic artificial silk flowers, no text, no logos, no watermark.",
+  "style": "Photorealistic, high detail, realistic artificial silk flowers. Brand color palette: soft sky blue, deep ocean blue, sunflower yellow and warm gold accents with lots of white; bright, airy, elegant and cheerful. No text, no letters, no logos, no watermark.",
   "images": [
     {
       "key": "hero-bouquet",
-      "file": "hero-bouquet.svg",
+      "file": "hero-bouquet.webp",
       "size": "1536x1024",
       "background": "transparent",
-      "bg": "#c7a6e8",
+      "bg": "#9fd2f0",
       "label": "Ramo héroe",
-      "prompt": "A large lush bouquet of artificial red and pink silk roses with baby's breath, wrapped in lilac paper with a satin ribbon, next to an elegant open gift box, a few rose petals floating in the air, isolated on a transparent background, front view, cheerful premium look."
+      "prompt": "A large lush bouquet of artificial sunflowers, white roses and baby's breath with a few blue eucalyptus-like leaves, wrapped in cream paper with a sky-blue satin ribbon, next to an elegant open white gift box with a gold ribbon, a few yellow petals floating in the air, isolated on a fully transparent background, front view, premium cheerful look."
     },
     {
       "key": "hero-card-ramos",
-      "file": "hero-card-ramos.svg",
+      "file": "hero-card-ramos.webp",
       "size": "1024x1024",
-      "bg": "#cfe3f3",
+      "bg": "#cfe8f7",
       "label": "Ramos eternos",
-      "prompt": "Flat lay of a bouquet of artificial pastel roses and eucalyptus on a light sky-blue background, a few loose petals scattered, top-down view, soft shadows."
+      "prompt": "Flat lay of a bouquet of artificial sunflowers, white roses and eucalyptus on a light sky-blue background, a few loose petals scattered, top-down view, soft shadows."
     },
     {
       "key": "hero-card-cajas",
-      "file": "hero-card-cajas.svg",
+      "file": "hero-card-cajas.webp",
       "size": "1024x1024",
-      "bg": "#9fcf7f",
+      "bg": "#e6f1fa",
       "label": "Cajas de regalo",
-      "prompt": "Row of round luxury hat boxes filled with artificial roses in different colors on a split green and cream background, playful studio product shot."
+      "prompt": "Row of round luxury hat boxes (white and ocean blue) filled with artificial roses and sunflowers, gold ribbons, on a split sky-blue and cream background, playful studio product shot."
     },
     {
       "key": "hero-card-peluches",
-      "file": "hero-card-peluches.svg",
+      "file": "hero-card-peluches.webp",
       "size": "1024x1024",
-      "bg": "#eaa6a6",
+      "bg": "#dbeef9",
       "label": "Peluches y detalles",
-      "prompt": "A cute small teddy bear holding an artificial red rose, with a tiny heart-shaped gift box beside it, on a soft pink background with a pink floor, minimal studio shot."
+      "prompt": "A cute small cream teddy bear holding an artificial sunflower, with a tiny sky-blue heart-shaped gift box beside it, on a soft pale-blue background with a pale-blue floor, minimal studio shot."
     },
     {
       "key": "hero-card-hogar",
-      "file": "hero-card-hogar.svg",
+      "file": "hero-card-hogar.webp",
       "size": "1024x1024",
-      "bg": "#a9dcc0",
+      "bg": "#fbeec2",
       "label": "Arreglos para el hogar",
-      "prompt": "Top-down view of an artificial white orchid in a ceramic pot and a small vase of artificial lavender on a mint green background, decorative ribbons around, playful composition."
+      "prompt": "Top-down view of an artificial white orchid in a white ceramic pot and a small vase of artificial yellow and white flowers on a soft butter-yellow background, blue and gold ribbons around, playful composition."
     },
     {
       "key": "p-caja-rosas-rojas",
@@ -148,91 +148,91 @@
     },
     {
       "key": "promo-elegancia",
-      "file": "promo-elegancia.svg",
+      "file": "promo-elegancia.webp",
       "size": "1024x1024",
-      "bg": "#d59ad6",
+      "bg": "#1672ad",
       "label": "Elegancia",
-      "prompt": "An elegant arrangement of artificial pink and white roses and orchids in a glass vase, surrounded by floating petals and ribbons, on a vibrant pink and turquoise gradient background, playful editorial studio photo."
+      "prompt": "An elegant arrangement of artificial white roses, sunflowers and orchids in a clear glass vase, surrounded by floating petals and a gold ribbon, on a sky-blue to ocean-blue gradient background, editorial studio photo."
     },
     {
       "key": "promo-celebra",
-      "file": "promo-celebra.svg",
+      "file": "promo-celebra.webp",
       "size": "1536x1024",
-      "bg": "#2f8c77",
+      "bg": "#035580",
       "label": "Celebra",
-      "prompt": "A festive composition with a big bouquet of artificial colorful flowers, a teddy bear, gift boxes and heart balloons, with confetti and petals flying in the air, on a deep teal green background with a diagonal light stripe, playful editorial studio photo."
+      "prompt": "A festive composition with a big bouquet of artificial sunflowers and white flowers, a cream teddy bear, blue and white gift boxes with gold ribbons and gold heart balloons, confetti and petals flying in the air, on a deep ocean-blue background with a diagonal light stripe, editorial studio photo."
     },
     {
       "key": "feature-pareja",
-      "file": "feature-pareja.svg",
+      "file": "feature-pareja.webp",
       "size": "1024x768",
       "bg": "#e9d7c7",
       "label": "Para tu pareja",
-      "prompt": "A young couple smiling at home in a cozy living room, one person giving the other a bouquet of artificial red roses and a small gift box, warm natural light, lifestyle photo."
+      "prompt": "A young Latin American couple smiling at home in a bright cozy living room, one person giving the other a bouquet of artificial sunflowers and white roses and a small sky-blue gift box, warm natural light, lifestyle photo."
     },
     {
       "key": "cat-rosas",
-      "file": "cat-rosas.svg",
+      "file": "cat-rosas.webp",
       "size": "1024x1024",
       "bg": "#f3c9d3",
       "label": "Rosas",
-      "prompt": "A lush arrangement of artificial red and pink roses in a cozy bright living room, close-up lifestyle photo."
+      "prompt": "A lush arrangement of artificial red and white roses in a white vase in a bright airy living room with soft blue accents, close-up lifestyle photo."
     },
     {
       "key": "cat-girasoles",
-      "file": "cat-girasoles.svg",
+      "file": "cat-girasoles.webp",
       "size": "1024x1024",
       "bg": "#f6e2a0",
       "label": "Girasoles",
-      "prompt": "Artificial sunflowers in a rustic vase on a wooden table next to a window, bright lifestyle photo."
+      "prompt": "Artificial sunflowers in a white ceramic vase on a light wooden table next to a sunny window with a sky-blue curtain, bright lifestyle photo."
     },
     {
       "key": "cat-tulipanes",
-      "file": "cat-tulipanes.svg",
+      "file": "cat-tulipanes.webp",
       "size": "1024x1024",
       "bg": "#f7cfe0",
       "label": "Tulipanes",
-      "prompt": "Artificial pastel tulips in a glass vase on a shelf in a bright home, lifestyle photo."
+      "prompt": "Artificial yellow and white tulips in a glass vase on a white shelf in a bright home with pale blue walls, lifestyle photo."
     },
     {
       "key": "cat-orquideas",
-      "file": "cat-orquideas.svg",
+      "file": "cat-orquideas.webp",
       "size": "1024x1024",
       "bg": "#e6dcf3",
       "label": "Orquídeas",
-      "prompt": "Artificial purple and white orchids in ceramic pots on a light table, lifestyle photo."
+      "prompt": "Artificial white orchids in white ceramic pots on a light table against a pale sky-blue wall, lifestyle photo."
     },
     {
       "key": "cat-cajas",
-      "file": "cat-cajas.svg",
+      "file": "cat-cajas.webp",
       "size": "1024x1024",
       "bg": "#d7c3ae",
       "label": "Cajas de regalo",
-      "prompt": "Several luxury flower boxes with artificial roses and ribbons on a table, top-down photo."
+      "prompt": "Several luxury flower boxes in white and ocean blue with artificial roses and sunflowers and gold ribbons on a white table, top-down photo."
     },
     {
       "key": "cat-peluches",
-      "file": "cat-peluches.svg",
+      "file": "cat-peluches.webp",
       "size": "1024x1024",
       "bg": "#c9c3d6",
       "label": "Peluches",
-      "prompt": "Soft teddy bears holding artificial flowers sitting on a fluffy grey blanket, cozy photo."
+      "prompt": "Soft cream teddy bears holding artificial sunflowers and white roses sitting on a fluffy white blanket with a sky-blue pillow, cozy photo."
     },
     {
       "key": "cat-globos",
-      "file": "cat-globos.svg",
+      "file": "cat-globos.webp",
       "size": "1024x1024",
       "bg": "#bfe0c4",
       "label": "Globos",
-      "prompt": "Colorful heart and round foil balloons tied to a bouquet of artificial flowers in a garden, festive photo."
+      "prompt": "Gold and sky-blue heart and round foil balloons tied to a bouquet of artificial sunflowers, in a sunny garden, festive photo."
     },
     {
       "key": "look-sala",
-      "file": "look-sala.svg",
+      "file": "look-sala.webp",
       "size": "1536x1024",
       "bg": "#a7b39a",
       "label": "Arma el regalo perfecto",
-      "prompt": "A cozy modern living room with a coffee table styled with a large bouquet of artificial roses, a gift box, a scented candle and a teddy bear, plants and a window in the background, warm soft light, wide interior lifestyle photo."
+      "prompt": "A bright modern living room with white and pale blue tones, a coffee table styled with a large bouquet of artificial sunflowers and white roses, a white gift box with gold ribbon, a scented candle and a cream teddy bear, plants and a big window in the background, warm soft light, wide interior lifestyle photo."
     },
     {
       "key": "p-caja-rosas-rojas-alt",
@@ -340,67 +340,67 @@
     },
     {
       "key": "col-amigos",
-      "file": "col-amigos.svg",
+      "file": "col-amigos.webp",
       "size": "1536x1024",
       "bg": "#f2c9a8",
       "label": "Para amigos",
-      "prompt": "Two smiling friends at a bright cafe table, one giving the other a colorful bouquet of artificial sunflowers and a small gift box, warm natural light, lifestyle photo, wide composition with the subject on the right."
+      "prompt": "Two smiling young Latin American friends at a bright cafe table, one giving the other a bouquet of artificial sunflowers and a small sky-blue gift box, warm natural light, lifestyle photo, wide composition with the subjects on the right and empty space on the left."
     },
     {
       "key": "col-familia",
-      "file": "col-familia.svg",
+      "file": "col-familia.webp",
       "size": "1536x1024",
       "bg": "#e8d3e6",
       "label": "Para la familia",
-      "prompt": "A happy family moment at home, a child giving their mother a pastel bouquet of artificial tulips, cozy bright living room, lifestyle photo, wide composition with the subject on the right."
+      "prompt": "A happy Latin American family moment at home, a child giving their mother a bouquet of artificial yellow and white tulips, bright living room with pale blue accents, lifestyle photo, wide composition with the subjects on the right and empty space on the left."
     },
     {
       "key": "contact-hero",
-      "file": "contact-hero.svg",
+      "file": "contact-hero.webp",
       "size": "1536x1024",
       "bg": "#b98aa8",
       "label": "Contacto",
-      "prompt": "A dreamy wide photo of a bouquet of artificial pink and red roses on a table by a sunny window with soft bokeh background, warm golden light, space in the center for text, cinematic."
+      "prompt": "A dreamy wide photo of a bouquet of artificial sunflowers and white roses on a white table by a sunny window with a sky-blue sky outside, soft bokeh background, warm golden light, calm empty space in the center for text, cinematic."
     },
     {
       "key": "contact-form",
-      "file": "contact-form.svg",
+      "file": "contact-form.webp",
       "size": "1024x1024",
       "bg": "#c8dcef",
       "label": "Escríbenos",
-      "prompt": "A smiling florist arranging artificial flowers in a bright boutique flower shop, holding a phone, soft natural light, lifestyle photo."
+      "prompt": "A smiling young Latin American florist arranging artificial sunflowers and white flowers in a bright white boutique flower shop, holding a phone, soft natural light, lifestyle photo."
     },
     {
       "key": "stores-intro",
-      "file": "stores-intro.svg",
+      "file": "stores-intro.webp",
       "size": "1024x768",
       "bg": "#f1dbe5",
       "label": "Nuestra tienda",
-      "prompt": "Interior of a bright modern boutique selling artificial flowers and gifts, wooden shelves with bouquets, gift boxes and teddy bears, a friendly staff member helping a customer, warm lighting, lifestyle photo."
+      "prompt": "Interior of a bright modern boutique with white walls and pale blue accents selling artificial flowers and gifts, light wooden shelves with sunflower bouquets, white and blue gift boxes and teddy bears, a friendly Latin American staff member helping a customer, warm lighting, lifestyle photo."
     },
     {
       "key": "store-miraflores",
-      "file": "store-miraflores.svg",
+      "file": "store-miraflores.webp",
       "size": "1024x1024",
       "bg": "#e9c7d6",
       "label": "Miraflores",
-      "prompt": "Storefront of a small elegant flower and gift boutique with a pink facade and window displays of artificial roses, in a sunny Lima Miraflores street, photo."
+      "prompt": "Storefront of a small elegant flower and gift boutique with a white and sky-blue facade, a blank sign with no text, window displays of artificial sunflowers and roses, on a sunny street in Miraflores, Lima, photo."
     },
     {
       "key": "store-sanisidro",
-      "file": "store-sanisidro.svg",
+      "file": "store-sanisidro.webp",
       "size": "1024x1024",
       "bg": "#d9d0ee",
       "label": "San Isidro",
-      "prompt": "A customer holding a bouquet of artificial sunflowers inside a cozy gift shop full of flowers and teddy bears, warm light, lifestyle photo."
+      "prompt": "A smiling Latin American customer holding a bouquet of artificial sunflowers inside a cozy bright gift shop full of flowers and teddy bears, white and pale blue decor, warm light, lifestyle photo."
     },
     {
       "key": "faq-hero",
-      "file": "faq-hero.svg",
+      "file": "faq-hero.webp",
       "size": "1536x1024",
       "bg": "#e9c9dc",
       "label": "Preguntas frecuentes",
-      "prompt": "A florist's hands tying a ribbon around a bouquet of artificial pink roses on a wooden workbench, soft natural light, gift boxes and a small notebook with questions blurred in the background, warm lifestyle photo."
+      "prompt": "A florist's hands tying a sky-blue ribbon around a bouquet of artificial sunflowers and white roses on a light wooden workbench, soft natural light, white gift boxes and a small notebook blurred in the background, warm lifestyle photo, wide composition."
     }
   ]
 }

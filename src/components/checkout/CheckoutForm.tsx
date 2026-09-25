@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { ChevronDown, CreditCard, MapPin, Package, Smartphone, Landmark } from "lucide-react";
+import { ChevronDown, MapPin, Package, Smartphone, Landmark } from "lucide-react";
 import { buildStores } from "@/data/stores";
 import { pickupOptions, shippingCost, shippingOptionsFor } from "@/lib/catalog/queries";
 import { formatPrice } from "@/lib/format";
@@ -16,12 +16,11 @@ import { useAccount } from "../account/AccountProvider";
 import { useCatalog } from "../catalog/CatalogProvider";
 import { AddressFieldsGroup, emptyAddress, fieldClass, type AddressFields } from "../account/AddressForm";
 import { useCart } from "../cart/CartProvider";
-import { PaymentIcons } from "../PaymentIcons";
 import { CheckoutShell } from "./CheckoutShell";
 import { OrderSummary } from "./OrderSummary";
 
 type Delivery = "envio" | "recojo";
-type Payment = "card" | "yape" | "transfer";
+type Payment = "yape" | "transfer";
 type ValidPromo = Extract<PromotionCheck, { valid: true }>;
 
 const h2 = "text-[21px] font-bold leading-tight text-ink";
@@ -29,9 +28,9 @@ const h2 = "text-[21px] font-bold leading-tight text-ink";
 function Radio({ checked, onChange, name, children, first, last }: { checked: boolean; onChange: () => void; name: string; children: React.ReactNode; first?: boolean; last?: boolean }) {
   return (
     <label
-      className={`flex cursor-pointer items-center gap-3 border px-4 py-3.5 text-[14px] ${first ? "rounded-t-[5px]" : "-mt-px"} ${last ? "rounded-b-[5px]" : ""} ${checked ? "relative z-[1] border-navy bg-[#f4f3fb]" : "border-[#dfdfdf]"}`}
+      className={`flex cursor-pointer items-center gap-3 border px-4 py-3.5 text-[14px] ${first ? "rounded-t-[5px]" : "-mt-px"} ${last ? "rounded-b-[5px]" : ""} ${checked ? "relative z-[1] border-ocean bg-mist" : "border-[#dfdfdf]"}`}
     >
-      <input type="radio" name={name} checked={checked} onChange={onChange} className="size-[18px] shrink-0 accent-navy" />
+      <input type="radio" name={name} checked={checked} onChange={onChange} className="size-[18px] shrink-0 accent-ocean" />
       {children}
     </label>
   );
@@ -126,7 +125,7 @@ export function CheckoutForm() {
           <div className="py-16 text-center">
             <h1 className={h2}>Tu carrito está vacío</h1>
             <p className="mt-2 text-[14px] text-muted">Agrega productos para continuar con tu compra.</p>
-            <Link href="/" className="mt-6 inline-grid h-11 place-items-center rounded-[5px] bg-navy px-6 text-[14px] font-bold text-white hover:bg-navy-dark">
+            <Link href="/" className="mt-6 inline-grid h-11 place-items-center rounded-[5px] bg-ocean px-6 text-[14px] font-bold text-white hover:bg-ocean-dark">
               Ir a la tienda
             </Link>
           </div>
@@ -146,7 +145,7 @@ export function CheckoutForm() {
     >
       <div className="flex gap-3">
         <input aria-label="Código de descuento" value={discount} onChange={(e) => setDiscount(e.target.value.toUpperCase())} placeholder="Código de descuento" className={`${fieldClass} flex-1`} />
-        <button disabled={!discount.trim()} className="h-[46px] rounded-[5px] bg-navy px-4 text-[14px] font-bold text-white disabled:bg-[#e1e1e1] disabled:text-muted">Aplicar</button>
+        <button disabled={!discount.trim()} className="h-[46px] rounded-[5px] bg-ocean px-4 text-[14px] font-bold text-white disabled:bg-[#e1e1e1] disabled:text-muted">Aplicar</button>
       </div>
       {discountMsg && <p className="mt-2 text-[13px] text-sale">{discountMsg}</p>}
       {promo && (
@@ -217,7 +216,7 @@ export function CheckoutForm() {
       summary={summary}
       mobileSummary={
         <div className="px-5">
-          <button onClick={() => setSummaryOpen(!summaryOpen)} aria-expanded={summaryOpen} className="flex h-14 w-full items-center justify-between text-[14px] text-magenta">
+          <button onClick={() => setSummaryOpen(!summaryOpen)} aria-expanded={summaryOpen} className="flex h-14 w-full items-center justify-between text-[14px] text-cielo">
             <span className="flex items-center gap-1">
               {summaryOpen ? "Ocultar" : "Mostrar"} resumen del pedido <ChevronDown className={`size-4 transition-transform ${summaryOpen ? "rotate-180" : ""}`} />
             </span>
@@ -231,12 +230,12 @@ export function CheckoutForm() {
           <section>
             <div className="flex items-baseline justify-between">
               <h2 className={h2}>Contacto</h2>
-              {!customer && <Link href="/cuenta/ingresar" className="text-[14px] text-magenta underline underline-offset-2">Iniciar sesión</Link>}
+              {!customer && <Link href="/cuenta/ingresar" className="text-[14px] text-cielo underline underline-offset-2">Iniciar sesión</Link>}
             </div>
             <label htmlFor="co-email" className="sr-only">Correo electrónico</label>
             <input id="co-email" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Correo electrónico" className={`${fieldClass} mt-3.5`} />
             <label className="mt-3 flex items-center gap-2.5 text-[14px] text-ink">
-              <input type="checkbox" checked={news} onChange={(e) => setNews(e.target.checked)} className="size-[18px] accent-navy" />
+              <input type="checkbox" checked={news} onChange={(e) => setNews(e.target.checked)} className="size-[18px] accent-ocean" />
               Enviarme novedades y ofertas por correo
             </label>
           </section>
@@ -268,7 +267,7 @@ export function CheckoutForm() {
                 </div>
                 {customer && (
                   <label className="mt-3 flex items-center gap-2.5 text-[14px] text-ink">
-                    <input type="checkbox" checked={saveInfo} onChange={(e) => setSaveInfo(e.target.checked)} className="size-[18px] accent-navy" />
+                    <input type="checkbox" checked={saveInfo} onChange={(e) => setSaveInfo(e.target.checked)} className="size-[18px] accent-ocean" />
                     Guardar esta dirección en mi cuenta
                   </label>
                 )}
@@ -338,38 +337,34 @@ export function CheckoutForm() {
               </Radio>
               {payment === "yape" && (
                 <div className="-mt-px border border-[#dfdfdf] bg-[#f5f5f5] p-4 text-center text-[14px] leading-[1.5] text-muted">
-                  Al confirmar, yapea o plinea <strong className="text-ink">{formatPrice(total)}</strong> al <strong className="text-ink">{site.phoneDisplay}</strong> a nombre de
-                  Cielo Online y envíanos la captura por WhatsApp. Prepararemos tu pedido en cuanto confirmemos el pago.
+                  Al confirmar, yapea o plinea <strong className="text-ink">{formatPrice(total)}</strong> al <strong className="text-ink">{site.phoneDisplay}</strong> a nombre de{" "}
+                  {site.name} y envíanos la captura por WhatsApp. Prepararemos tu pedido en cuanto confirmemos el pago.
                 </div>
               )}
-              <Radio name="payment" checked={payment === "transfer"} onChange={() => setPayment("transfer")}>
+              <Radio name="payment" last={payment !== "transfer"} checked={payment === "transfer"} onChange={() => setPayment("transfer")}>
                 <span className="flex flex-1 items-center gap-2"><Landmark className="size-4" strokeWidth={1.6} /> Transferencia bancaria</span>
               </Radio>
               {payment === "transfer" && (
-                <div className="-mt-px border border-[#dfdfdf] bg-[#f5f5f5] p-4 text-center text-[14px] leading-[1.5] text-muted">
-                  Te enviaremos los datos de la cuenta BCP / Interbank por correo. Tu pedido se procesará al recibir la transferencia.
-                </div>
-              )}
-              <Radio name="payment" last={payment !== "card"} checked={payment === "card"} onChange={() => setPayment("card")}>
-                <span className="flex flex-1 items-center gap-2"><CreditCard className="size-4" strokeWidth={1.6} /> Tarjeta de crédito o débito</span>
-                <PaymentIcons size="sm" className="hidden sm:flex [&>li:nth-child(n+4)]:hidden" />
-              </Radio>
-              {payment === "card" && (
                 <div className="-mt-px rounded-b-[5px] border border-[#dfdfdf] bg-[#f5f5f5] p-4 text-center text-[14px] leading-[1.5] text-muted">
-                  Al confirmar te enviaremos un <strong className="text-ink">link de pago seguro</strong> por WhatsApp y correo para pagar con tu tarjeta. Nunca te pediremos los datos de tu tarjeta aquí.
+                  Te enviaremos los datos de la cuenta BCP / Interbank por correo. Tu pedido se procesará al recibir la transferencia.
                 </div>
               )}
             </div>
           </section>
 
           {error && <p role="alert" className="mt-6 rounded-[5px] bg-[#fdecec] px-4 py-3 text-[14px] text-sale">{error}</p>}
-          <button disabled={submitting} className="mt-8 h-[52px] w-full rounded-[5px] bg-navy text-[16px] font-bold text-white hover:bg-navy-dark disabled:opacity-60">
+          <button disabled={submitting} className="mt-8 h-[52px] w-full rounded-[5px] bg-ocean text-[16px] font-bold text-white hover:bg-ocean-dark disabled:opacity-60">
             {submitting ? "Registrando tu pedido…" : "Confirmar pedido"}
           </button>
 
           <nav className="mt-10 flex flex-wrap gap-x-4 gap-y-2 border-t border-[#dfdfdf] pt-4 text-[13px]">
-            {["Política de reembolso", "Envíos", "Aviso de privacidad", "Términos del servicio"].map((l) => (
-              <Link key={l} href="#" className="text-magenta underline underline-offset-2">{l}</Link>
+            {[
+              { label: "Cambios y devoluciones", href: "/terminos-y-condiciones" },
+              { label: "Envíos", href: "/opciones-de-envio" },
+              { label: "Términos y condiciones", href: "/terminos-y-condiciones" },
+              { label: "Libro de reclamaciones", href: "/libro-de-reclamaciones" },
+            ].map((l) => (
+              <Link key={l.label} href={l.href} className="text-cielo underline underline-offset-2">{l.label}</Link>
             ))}
           </nav>
         </form>

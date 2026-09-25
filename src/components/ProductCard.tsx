@@ -12,7 +12,7 @@ export function ProductCard({ product, className = "", footer, showSku = false }
   return (
     <article className={`group relative flex flex-col rounded-[5px] bg-white p-[15px] shadow-[inset_0_0_0_1px_#dfdfdf] ${className}`}>
       {onSale && (
-        <span className="absolute top-2.5 right-[11px] z-10 grid h-[22px] place-items-center rounded-[20px] border border-magenta bg-magenta px-2 text-[12px] leading-none text-white">
+        <span className="absolute top-2.5 right-[11px] z-10 grid h-[22px] place-items-center rounded-[20px] border border-cielo bg-cielo px-2 text-[12px] leading-none text-white">
           -{discount}%
         </span>
       )}
@@ -48,13 +48,13 @@ export function ProductCard({ product, className = "", footer, showSku = false }
           ({product.reviewCount})
         </div>
         <p className="mt-2.5 flex items-baseline gap-1.5 leading-[17px]">
-          <span className={`text-[16px] ${onSale ? "text-sale" : "text-navy"}`}>{formatPrice(product.price)}</span>
+          <span className={`text-[16px] ${onSale ? "text-sale" : "text-ocean"}`}>{formatPrice(product.price)}</span>
           <span className="text-[11px] text-muted">IGV incl.</span>
         </p>
         {onSale && <p className="mt-0.5 text-[12px] leading-[15px] text-muted line-through">{formatPrice(product.compareAtPrice!)}</p>}
         <AddToCartButton
           product={product}
-          className="mt-3.5 h-11 w-full rounded-[5px] bg-navy text-[14px] font-bold text-white transition-colors hover:bg-navy-dark"
+          className="mt-3.5 h-11 w-full rounded-[5px] bg-ocean text-[14px] font-bold text-white transition-colors hover:bg-ocean-dark"
         />
         {footer}
       </div>

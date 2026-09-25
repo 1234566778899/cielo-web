@@ -23,7 +23,7 @@ export function StoreCards() {
               <p className="mt-2.5">{s.address.join(", ")}</p>
               <p className="mt-3">{s.phone}</p>
               <p className="mt-3">{s.hours}</p>
-              <a href={directionsUrl(s.mapQuery)} target="_blank" rel="noopener noreferrer" className="mt-4 inline-grid h-10 w-fit place-items-center rounded-[5px] bg-navy px-[18px] text-[13px] font-bold text-white hover:bg-navy-dark">
+              <a href={directionsUrl(s.mapQuery)} target="_blank" rel="noopener noreferrer" className="mt-4 inline-grid h-10 w-fit place-items-center rounded-[5px] bg-ocean px-[18px] text-[13px] font-bold text-white hover:bg-ocean-dark">
                 Cómo llegar
               </a>
             </div>

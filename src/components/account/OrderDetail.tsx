@@ -26,7 +26,7 @@ export function OrderDetail({ id }: { id: string }) {
     return (
       <div className="rounded-[5px] bg-white px-6 py-16 text-center">
         <p className="heading text-[20px] tracking-normal text-ink">No encontramos este pedido</p>
-        <Link href="/cuenta" className="mt-4 inline-block text-[14px] text-magenta hover:underline">Volver a mis pedidos</Link>
+        <Link href="/cuenta" className="mt-4 inline-block text-[14px] text-cielo hover:underline">Volver a mis pedidos</Link>
       </div>
     );
   }
@@ -72,7 +72,7 @@ export function OrderDetail({ id }: { id: string }) {
             </ol>
             {order.tracking && (
               <p className="mt-5 text-[14px] text-muted">
-                Seguimiento: {order.tracking.company} {order.tracking.url ? <a href={order.tracking.url} target="_blank" rel="noopener noreferrer" className="text-magenta underline">{order.tracking.number ?? "ver envío"}</a> : order.tracking.number}
+                Seguimiento: {order.tracking.company} {order.tracking.url ? <a href={order.tracking.url} target="_blank" rel="noopener noreferrer" className="text-cielo underline">{order.tracking.number ?? "ver envío"}</a> : order.tracking.number}
               </p>
             )}
           </section>
@@ -141,7 +141,7 @@ export function OrderDetail({ id }: { id: string }) {
               close();
               router.push("/carrito");
             }}
-            className="h-11 w-full rounded-[5px] bg-navy text-[14px] font-bold text-white hover:bg-navy-dark"
+            className="h-11 w-full rounded-[5px] bg-ocean text-[14px] font-bold text-white hover:bg-ocean-dark"
           >
             Comprar de nuevo
           </button>

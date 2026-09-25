@@ -26,7 +26,7 @@ function CategoriesBox({ current }: { current: string }) {
   const [expanded, setExpanded] = useState<string | null>(
     categoryTree.find((c) => c.children?.some((ch) => ch.slug === current))?.slug ?? null,
   );
-  const linkClass = (slug: string) => `block leading-[23px] hover:text-magenta ${slug === current ? "font-bold text-magenta" : ""}`;
+  const linkClass = (slug: string) => `block leading-[23px] hover:text-cielo ${slug === current ? "font-bold text-cielo" : ""}`;
 
   return (
     <ul className="space-y-1.5 rounded-[5px] bg-muted/5 p-5 text-[15px] text-muted shadow-[inset_0_0_0_1px_#dfdfdf]">
@@ -66,7 +66,7 @@ function Checkbox({ checked, disabled, label, count, onChange }: { checked: bool
   return (
     <label className={`flex h-[22px] items-center gap-2.5 text-[14px] ${disabled ? "cursor-not-allowed text-muted/60" : "cursor-pointer text-ink"}`}>
       <input type="checkbox" checked={checked} disabled={disabled} onChange={onChange} className="peer sr-only" />
-      <span className={`grid size-5 shrink-0 place-items-center rounded-[3px] border peer-focus-visible:outline-2 peer-focus-visible:outline-navy ${checked ? "border-magenta bg-magenta" : "border-[#dfdfdf] bg-white"}`}>
+      <span className={`grid size-5 shrink-0 place-items-center rounded-[3px] border peer-focus-visible:outline-2 peer-focus-visible:outline-ocean ${checked ? "border-cielo bg-cielo" : "border-[#dfdfdf] bg-white"}`}>
         {checked && <Check className="size-3.5 text-white" strokeWidth={3} />}
       </span>
       <span className="flex-1">{label}</span>
@@ -136,7 +136,7 @@ export function CollectionSidebar({ current, selected, counts, onToggle, availab
                 placeholder={k === "min" ? "Desde" : "Hasta"}
                 value={price.range[k]}
                 onChange={(e) => price.onChange({ ...price.range, [k]: e.target.value })}
-                className="h-[46px] w-full min-w-0 rounded-[5px] border border-[#dfdfdf] bg-white px-3 text-[14px] text-ink focus:outline-2 focus:outline-navy"
+                className="h-[46px] w-full min-w-0 rounded-[5px] border border-[#dfdfdf] bg-white px-3 text-[14px] text-ink focus:outline-2 focus:outline-ocean"
               />
             </label>
           ))}

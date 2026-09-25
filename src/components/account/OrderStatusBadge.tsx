@@ -10,11 +10,11 @@ export const statusLabel: Record<OrderStatus, string> = {
 };
 
 const tone: Record<OrderStatus, string> = {
-  confirmado: "bg-[#eef0ff] text-navy",
+  confirmado: "bg-[#e6f1fa] text-ocean",
   "en-preparacion": "bg-[#fff6d6] text-[#7a5a00]",
   enviado: "bg-[#e6f1ff] text-[#1c5aa6]",
   entregado: "bg-[#e7ffd9] text-[#2d7a00]",
-  "listo-para-recoger": "bg-[#fdf3f8] text-magenta",
+  "listo-para-recoger": "bg-mist text-cielo",
   cancelado: "bg-[#f1f1f1] text-muted",
 };
 

@@ -19,7 +19,7 @@ export function OrdersList() {
         <div className="mt-6 rounded-[5px] bg-white px-6 py-16 text-center">
           <p className="heading text-[20px] tracking-normal text-ink">Aún no tienes pedidos</p>
           <p className="mt-2 text-[14px] text-muted">Cuando hagas una compra, la verás aquí.</p>
-          <Link href="/" className="mt-5 inline-grid h-11 place-items-center rounded-[5px] bg-navy px-6 text-[14px] font-bold text-white hover:bg-navy-dark">
+          <Link href="/" className="mt-5 inline-grid h-11 place-items-center rounded-[5px] bg-ocean px-6 text-[14px] font-bold text-white hover:bg-ocean-dark">
             Ir a la tienda
           </Link>
         </div>

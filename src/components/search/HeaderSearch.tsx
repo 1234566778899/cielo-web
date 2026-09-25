@@ -82,7 +82,7 @@ export function HeaderSearch({ className = "" }: { className?: string }) {
           aria-expanded={showPanel}
           aria-controls="predictive-search"
           placeholder="Buscar productos"
-          className={`h-[46px] w-full border border-[#9b1c66] bg-white pr-14 pl-4 text-[14px] text-ink placeholder:text-[#6b6b6b] focus:outline-none [&::-webkit-search-cancel-button]:hidden ${showPanel ? "rounded-t-[5px]" : "rounded-[5px] focus:outline-2 focus:outline-navy"}`}
+          className={`h-[46px] w-full border border-ocean/30 bg-white pr-14 pl-4 text-[14px] text-ink placeholder:text-[#6b6b6b] focus:outline-none [&::-webkit-search-cancel-button]:hidden ${showPanel ? "rounded-t-[5px]" : "rounded-[5px] focus:outline-2 focus:outline-ocean"}`}
         />
         {query && (
           <button type="button" onClick={() => setQuery("")} aria-label="Borrar búsqueda" className="absolute top-1/2 right-12 -translate-y-1/2 text-muted hover:text-ink">
@@ -104,14 +104,14 @@ export function HeaderSearch({ className = "" }: { className?: string }) {
                   <ul className="mt-2.5">
                     {suggestions.phrases.map((s) => (
                       <li key={s}>
-                        <button type="button" onClick={() => { setQuery(s); go(`/buscar?q=${encodeURIComponent(s)}`); }} className="block w-full py-1.5 text-left text-[15px] leading-5 text-muted hover:text-magenta">
+                        <button type="button" onClick={() => { setQuery(s); go(`/buscar?q=${encodeURIComponent(s)}`); }} className="block w-full py-1.5 text-left text-[15px] leading-5 text-muted hover:text-cielo">
                           <Highlight text={s} query={q} />
                         </button>
                       </li>
                     ))}
                     {suggestions.collections.map((c) => (
                       <li key={c.slug}>
-                        <Link href={`/coleccion/${c.slug}`} onClick={() => setOpen(false)} className="block py-1.5 text-[15px] leading-5 text-muted hover:text-magenta">
+                        <Link href={`/coleccion/${c.slug}`} onClick={() => setOpen(false)} className="block py-1.5 text-[15px] leading-5 text-muted hover:text-cielo">
                           {c.title}
                         </Link>
                       </li>
@@ -133,7 +133,7 @@ export function HeaderSearch({ className = "" }: { className?: string }) {
                             <span>
                               <span className="block text-[15.4px] leading-[18px] group-hover:underline">{p.name}</span>
                               <span className="mt-1 flex items-baseline gap-1 text-[13px]">
-                                <span className={p.compareAtPrice ? "text-sale" : "text-navy"}>{formatPrice(p.price)}</span>
+                                <span className={p.compareAtPrice ? "text-sale" : "text-ocean"}>{formatPrice(p.price)}</span>
                                 <span className="text-[11px] text-muted">IGV incl.</span>
                                 {p.compareAtPrice && <s className="text-muted">{formatPrice(p.compareAtPrice)}</s>}
                               </span>
@@ -146,7 +146,7 @@ export function HeaderSearch({ className = "" }: { className?: string }) {
                 </div>
               </div>
             )}
-            <Link href={resultsHref} onClick={() => setOpen(false)} className="flex h-10 items-center justify-between border-t border-[#dfdfdf] px-[15px] text-[15px] hover:text-magenta">
+            <Link href={resultsHref} onClick={() => setOpen(false)} className="flex h-10 items-center justify-between border-t border-[#dfdfdf] px-[15px] text-[15px] hover:text-cielo">
               Buscar “{q}”
               <ChevronRight className="size-4" strokeWidth={1.5} />
             </Link>

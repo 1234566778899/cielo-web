@@ -45,12 +45,12 @@ export function PurchaseForm({ product }: { product: Product }) {
       </div>
 
       {onSale && (
-        <span className="mt-[30px] inline-grid h-8 place-items-center rounded-[20px] bg-magenta px-5 text-[13px] font-bold text-white">
+        <span className="mt-[30px] inline-grid h-8 place-items-center rounded-[20px] bg-cielo px-5 text-[13px] font-bold text-white">
           Ahorra {discount}%
         </span>
       )}
       <p className={`flex items-baseline gap-1.5 ${onSale ? "mt-[15px]" : "mt-[30px]"}`}>
-        <span className={`text-[24px] leading-none ${onSale ? "text-sale" : "text-navy"}`}>{formatPrice(variant.price)}</span>
+        <span className={`text-[24px] leading-none ${onSale ? "text-sale" : "text-ocean"}`}>{formatPrice(variant.price)}</span>
         <span className="text-[11px] text-muted">IGV incl.</span>
       </p>
       {onSale && <p className="mt-[5px] text-[15px] leading-[18px] text-muted line-through">{formatPrice(variant.compareAtPrice!)}</p>}
@@ -73,7 +73,7 @@ export function PurchaseForm({ product }: { product: Product }) {
                     aria-pressed={selected}
                     onClick={() => choose(option.title, value)}
                     className={`h-[42px] min-w-[70px] rounded-[5px] border px-4 text-[14px] transition-colors ${
-                      selected ? "border-navy bg-navy text-white" : "border-[#dfdfdf] bg-white text-ink hover:border-navy"
+                      selected ? "border-ocean bg-ocean text-white" : "border-[#dfdfdf] bg-white text-ink hover:border-ocean"
                     } ${soldOut ? "line-through opacity-60" : ""}`}
                   >
                     {value}
@@ -85,7 +85,7 @@ export function PurchaseForm({ product }: { product: Product }) {
         ))}
 
         <label className="flex items-center gap-2.5 text-[15px] font-bold text-ink">
-          <input type="checkbox" checked={giftWrap} onChange={(e) => setGiftWrap(e.target.checked)} className="size-[13px] accent-navy" />
+          <input type="checkbox" checked={giftWrap} onChange={(e) => setGiftWrap(e.target.checked)} className="size-[13px] accent-ocean" />
           ¿Envolver para regalo?
         </label>
         <div className="mt-[30px] flex gap-[15px]">
@@ -93,7 +93,7 @@ export function PurchaseForm({ product }: { product: Product }) {
           <button
             onClick={addToCart}
             disabled={!variant.inStock}
-            className="h-[50px] flex-1 rounded-[5px] bg-magenta text-[15px] font-bold text-white transition-colors hover:bg-magenta-dark disabled:cursor-not-allowed disabled:opacity-50"
+            className="h-[50px] flex-1 rounded-[5px] bg-cielo text-[15px] font-bold text-white transition-colors hover:bg-cielo-dark disabled:cursor-not-allowed disabled:opacity-50"
           >
             {variant.inStock ? "Agregar al carrito" : "Agotado"}
           </button>
@@ -105,7 +105,7 @@ export function PurchaseForm({ product }: { product: Product }) {
             router.push("/carrito");
           }}
           disabled={!variant.inStock}
-          className="mt-[15px] h-[50px] w-full rounded-[5px] bg-navy text-[15px] font-bold text-white transition-colors hover:bg-navy-dark disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-[15px] h-[50px] w-full rounded-[5px] bg-ocean text-[15px] font-bold text-white transition-colors hover:bg-ocean-dark disabled:cursor-not-allowed disabled:opacity-50"
         >
           Comprar ahora
         </button>

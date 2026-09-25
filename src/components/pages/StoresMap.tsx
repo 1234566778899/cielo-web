@@ -22,9 +22,9 @@ export function StoresMap() {
               <button
                 onClick={() => setActive(s.id)}
                 aria-pressed={store?.id === s.id}
-                className={`block w-full rounded-[5px] p-[15px] text-left text-[13px] leading-[1.35] text-muted transition-shadow ${store?.id === s.id ? "shadow-[inset_0_0_0_2px_var(--color-magenta)]" : "shadow-[inset_0_0_0_1px_#dfdfdf] hover:shadow-[inset_0_0_0_1px_var(--color-muted)]"}`}
+                className={`block w-full rounded-[5px] p-[15px] text-left text-[13px] leading-[1.35] text-muted transition-shadow ${store?.id === s.id ? "shadow-[inset_0_0_0_2px_var(--color-cielo)]" : "shadow-[inset_0_0_0_1px_#dfdfdf] hover:shadow-[inset_0_0_0_1px_var(--color-muted)]"}`}
               >
-                <MapPin className="size-7 text-magenta" strokeWidth={1.3} />
+                <MapPin className="size-7 text-cielo" strokeWidth={1.3} />
                 <span className="heading mt-3 block text-[15px] tracking-normal text-ink">{s.name}</span>
                 <span className="mt-2.5 block">
                   {s.address.map((line) => (
@@ -36,7 +36,7 @@ export function StoresMap() {
             </li>
           ))}
           <li className="sm:col-span-2">
-            <a href={whatsappUrl("Hola, quiero información sobre sus tiendas.")} target="_blank" rel="noopener noreferrer" className="text-[14px] text-magenta hover:underline">
+            <a href={whatsappUrl("Hola, quiero información sobre sus tiendas.")} target="_blank" rel="noopener noreferrer" className="text-[14px] text-cielo hover:underline">
               ¿Tienes dudas? Escríbenos por WhatsApp
             </a>
           </li>

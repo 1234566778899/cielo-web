@@ -9,7 +9,7 @@ import { formatPrice } from "@/lib/format";
 import { site, whatsappUrl } from "@/lib/site";
 import type { ShippingOption } from "@/lib/types";
 
-export const metadata: Metadata = { title: "Opciones de envío | Cielo Online" };
+export const metadata: Metadata = { title: "Opciones de envío" };
 export const revalidate = 60;
 
 const coverage = (o: ShippingOption) => (o.departments ? o.departments.join(" y ") : "Todo el Perú");

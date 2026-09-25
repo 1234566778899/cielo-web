@@ -10,7 +10,7 @@ const lato = Lato({ variable: "--font-lato", subsets: ["latin"], weight: ["400",
 const grandstander = Grandstander({ variable: "--font-grandstander", subsets: ["latin"], weight: ["600", "700"] });
 
 export const metadata: Metadata = {
-  title: "Cielo Online | Flores artificiales y regalos",
+  title: { default: "Mar del Cielo Detalles | Flores artificiales y regalos", template: "%s | Mar del Cielo" },
   description: "Flores artificiales, cajas de regalo y detalles para tu pareja, amigos y familia.",
 };
 

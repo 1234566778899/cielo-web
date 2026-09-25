@@ -48,7 +48,7 @@ export function MobileMenu() {
         aria-label={open ? "Cerrar menú" : "Abrir menú"}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className={`relative z-[47] grid size-[46px] place-items-center rounded-[5px] border border-white/30 ${open ? "bg-[#c73d8c]" : "hover:bg-white/10"}`}
+        className={`relative z-[47] grid size-[46px] place-items-center rounded-[5px] border border-ocean/25 ${open ? "bg-mist" : "hover:bg-mist"}`}
       >
         {open ? <X className="size-5" strokeWidth={1.5} /> : <Menu className="size-5" strokeWidth={1.5} />}
       </button>
@@ -75,10 +75,10 @@ export function MobileMenu() {
                         </button>
                       </div>
                       {expanded === item.label && (
-                        <ul className="border-b border-[#dfdfdf] bg-[#fdf3f8] py-1.5">
+                        <ul className="border-b border-[#dfdfdf] bg-mist py-1.5">
                           {item.children.map((c) => (
                             <li key={c.label}>
-                              <Link href={c.href} onClick={() => setOpen(false)} className="block px-4 py-2.5 text-[14px] text-muted hover:text-magenta">
+                              <Link href={c.href} onClick={() => setOpen(false)} className="block px-4 py-2.5 text-[14px] text-muted hover:text-cielo">
                                 {c.label}
                               </Link>
                             </li>
@@ -104,7 +104,7 @@ export function MobileMenu() {
             <ul className="mt-6 space-y-3 text-[14px] text-muted">
               {infoNav.filter((l) => !secondaryNav.some((s) => s.label === l.label)).map((l) => (
                 <li key={l.label}>
-                  <Link href={l.href} onClick={() => setOpen(false)} className="hover:text-magenta">{l.label}</Link>
+                  <Link href={l.href} onClick={() => setOpen(false)} className="hover:text-cielo">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -115,7 +115,7 @@ export function MobileMenu() {
               rel="noopener noreferrer"
               className="mt-8 flex h-[46px] items-center justify-between rounded-[5px] border border-[#dfdfdf] px-[15px] text-[14px] text-ink"
             >
-              <span className="flex items-center gap-2"><MessageCircle className="size-4 text-magenta" strokeWidth={1.6} /> {site.phoneDisplay}</span>
+              <span className="flex items-center gap-2"><MessageCircle className="size-4 text-cielo" strokeWidth={1.6} /> {site.phoneDisplay}</span>
               <span className="text-[12px] text-muted">{site.hours}</span>
             </a>
             <p className="mt-3 flex h-[46px] items-center rounded-[5px] border border-[#dfdfdf] px-[15px] text-[14px] text-ink">{site.currencyLabel}</p>

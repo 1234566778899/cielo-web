@@ -1,6 +1,9 @@
 /** Datos de contacto y de la tienda en un solo lugar. */
 export const site = {
-  name: "Cielo Online",
+  name: "Mar del Cielo",
+  /** Datos del proveedor para el libro de reclamaciones. Completa el RUC cuando lo tengas. */
+  legalName: "Mar del Cielo Detalles",
+  ruc: "",
   email: "hola@cieloonline.pe",
   phoneDisplay: "+51 904 435 631",
   whatsappNumber: "51904435631",

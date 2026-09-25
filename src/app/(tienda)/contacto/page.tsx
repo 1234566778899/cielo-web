@@ -9,13 +9,13 @@ import { SmartImage } from "@/components/SmartImage";
 import { img } from "@/lib/images";
 import { site, whatsappUrl } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Contacto | Cielo Online" };
+export const metadata: Metadata = { title: "Contacto" };
 
 const channels = [
   { icon: Mail, title: "Escríbenos", text: "Para consultas sobre productos, pedidos y soporte en general.", value: site.email, href: `mailto:${site.email}`, note: "Respondemos en menos de 24 horas." },
   { icon: Phone, title: "Llámanos", text: "Habla directamente con nuestro equipo de atención.", value: site.phoneDisplay, href: whatsappUrl(), note: "Lun–Sáb, 09:00–19:00." },
   { icon: Store, title: "Visítanos", text: "Ven a conocer nuestras flores y regalos en persona.", value: "Av. José Larco 345, Miraflores", href: "/tiendas", note: "Lima, Perú." },
-  { icon: MessageCircle, title: "Chat por WhatsApp", text: "¿Necesitas una respuesta rápida mientras compras?", value: "Iniciar conversación", href: whatsappUrl("Hola Cielo Online, tengo una consulta."), note: "Disponible en horario de atención." },
+  { icon: MessageCircle, title: "Chat por WhatsApp", text: "¿Necesitas una respuesta rápida mientras compras?", value: "Iniciar conversación", href: whatsappUrl(`Hola ${site.name}, tengo una consulta.`), note: "Disponible en horario de atención." },
 ];
 
 export default function ContactPage() {
@@ -29,10 +29,10 @@ export default function ContactPage() {
           const external = href.startsWith("http");
           return (
             <div key={title} className="rounded-[5px] p-5 shadow-[inset_0_0_0_1px_#dfdfdf]">
-              <Icon className="size-8 text-magenta" strokeWidth={1.3} />
+              <Icon className="size-8 text-cielo" strokeWidth={1.3} />
               <h2 className="heading mt-3 text-[22px] leading-[26px] tracking-normal text-ink">{title}</h2>
               <p className="mt-1.5 text-[15px] leading-5 text-muted/75">{text}</p>
-              <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="mt-4 block text-[15px] leading-5 text-ink hover:text-magenta">
+              <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="mt-4 block text-[15px] leading-5 text-ink hover:text-cielo">
                 {value}
               </a>
               <p className="mt-4 text-[15px] leading-5 text-muted/75">{note}</p>

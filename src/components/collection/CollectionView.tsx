@@ -126,7 +126,7 @@ export function CollectionView({ slug, products, query }: Props) {
         <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-label="Filtros">
           <div onClick={() => setDrawer(false)} className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-y-0 left-0 flex w-[88%] max-w-[360px] flex-col bg-white shadow-xl">
-            <header className="flex h-16 shrink-0 items-center justify-between bg-magenta px-[15px] text-white">
+            <header className="flex h-16 shrink-0 items-center justify-between bg-cielo px-[15px] text-white">
               <h2 className="heading text-[16.5px]">Filtros</h2>
               <button onClick={() => setDrawer(false)} aria-label="Cerrar filtros" className="grid size-8 place-items-center rounded-[5px] border border-[#dfdfdf] bg-white text-muted">
                 <X className="size-4" strokeWidth={1.5} />
@@ -135,7 +135,7 @@ export function CollectionView({ slug, products, query }: Props) {
             <div className="flex-1 overflow-y-auto p-5">{sidebar}</div>
             <footer className="grid shrink-0 grid-cols-2 gap-3 border-t border-[#dfdfdf] p-[15px]">
               <button onClick={clearAll} className="h-11 rounded-[5px] border border-[#dfdfdf] text-[14px] text-ink">Limpiar</button>
-              <button onClick={() => setDrawer(false)} className="h-11 rounded-[5px] bg-navy text-[14px] font-bold text-white">Ver {filtered.length} {filtered.length === 1 ? "producto" : "productos"}</button>
+              <button onClick={() => setDrawer(false)} className="h-11 rounded-[5px] bg-ocean text-[14px] font-bold text-white">Ver {filtered.length} {filtered.length === 1 ? "producto" : "productos"}</button>
             </footer>
           </div>
         </div>
@@ -168,7 +168,7 @@ export function CollectionView({ slug, products, query }: Props) {
               {filtered.length} {filtered.length === 1 ? "producto" : "productos"}
             </p>
             {activeCount > 0 && (
-              <button onClick={clearAll} className="text-[13px] text-magenta underline underline-offset-4">Limpiar filtros</button>
+              <button onClick={clearAll} className="text-[13px] text-cielo underline underline-offset-4">Limpiar filtros</button>
             )}
           </div>
         </div>
@@ -188,7 +188,7 @@ export function CollectionView({ slug, products, query }: Props) {
               {filtered.length} {filtered.length === 1 ? "producto" : "productos"}
             </p>
             {activeCount > 0 && (
-              <button onClick={clearAll} className="text-[13px] text-magenta underline underline-offset-4">
+              <button onClick={clearAll} className="text-[13px] text-cielo underline underline-offset-4">
                 Limpiar filtros ({activeCount})
               </button>
             )}
@@ -201,7 +201,7 @@ export function CollectionView({ slug, products, query }: Props) {
                 <select
                   value={sort}
                   onChange={(e) => { setSort(e.target.value as SortKey); setPage(1); }}
-                  className="h-[29px] cursor-pointer appearance-none rounded-[5px] bg-transparent pr-6 [field-sizing:content] text-[15px] text-muted focus:outline-2 focus:outline-navy"
+                  className="h-[29px] cursor-pointer appearance-none rounded-[5px] bg-transparent pr-6 [field-sizing:content] text-[15px] text-muted focus:outline-2 focus:outline-ocean"
                 >
                   {Object.entries(sorts).map(([key, s]) => (
                     <option key={key} value={key}>{s.label}</option>
@@ -219,7 +219,7 @@ export function CollectionView({ slug, products, query }: Props) {
                     onClick={() => setView(key)}
                     aria-label={label}
                     aria-pressed={view === key}
-                    className={`grid size-[38px] place-items-center rounded-[5px] ${view === key ? "bg-magenta text-white" : "text-ink hover:bg-muted/5"}`}
+                    className={`grid size-[38px] place-items-center rounded-[5px] ${view === key ? "bg-cielo text-white" : "text-ink hover:bg-muted/5"}`}
                   >
                     <Icon className="size-5" strokeWidth={1.3} />
                   </button>
@@ -232,7 +232,7 @@ export function CollectionView({ slug, products, query }: Props) {
         {visible.length === 0 ? (
           <div className="mt-5 rounded-[5px] px-6 py-16 text-center shadow-[inset_0_0_0_1px_#dfdfdf]">
             <p className="text-[15px] text-muted">No hay productos que coincidan con los filtros seleccionados.</p>
-            <button onClick={clearAll} className="mt-4 text-[14px] text-magenta underline underline-offset-4">
+            <button onClick={clearAll} className="mt-4 text-[14px] text-cielo underline underline-offset-4">
               Limpiar filtros
             </button>
           </div>
@@ -262,7 +262,7 @@ export function CollectionView({ slug, products, query }: Props) {
                 key={n}
                 onClick={() => goTo(n)}
                 aria-current={n === current ? "page" : undefined}
-                className={`grid size-[42px] place-items-center rounded-[5px] text-[15px] ${n === current ? "bg-navy text-white" : "bg-white text-ink hover:bg-muted/5"}`}
+                className={`grid size-[42px] place-items-center rounded-[5px] text-[15px] ${n === current ? "bg-ocean text-white" : "bg-white text-ink hover:bg-muted/5"}`}
               >
                 {n}
               </button>

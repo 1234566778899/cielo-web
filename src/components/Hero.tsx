@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { heroCards } from "@/data/catalog";
-import { img } from "@/lib/images";
+import { HeroVideo } from "./HeroVideo";
 import { SmartImage } from "./SmartImage";
 
 const bokeh = [
@@ -35,11 +35,11 @@ function PetalPattern() {
   );
 }
 
-/** Degradado muestreado de la imagen de fondo de la plantilla: lila a la izquierda, brillo rosado detrás del sujeto y azul a la derecha. */
+/** Cielo del logo: azul océano a la izquierda (donde va el texto blanco), celeste a la derecha y un brillo dorado de girasol detrás del ramo. */
 const heroBackground = [
-  "radial-gradient(ellipse 22% 60% at 66% 18%, rgba(242,226,252,.9), rgba(242,226,252,0) 70%)",
-  "radial-gradient(ellipse 30% 70% at 58% 55%, rgba(216,184,247,.55), rgba(216,184,247,0) 70%)",
-  "linear-gradient(90deg, #a479d5 0%, #a97ed8 20%, #af82dd 35%, #c497e8 55%, #c9bdf5 74%, #99b8f1 88%, #86aeee 100%)",
+  "radial-gradient(ellipse 22% 60% at 66% 18%, rgba(255,236,176,.75), rgba(255,236,176,0) 70%)",
+  "radial-gradient(ellipse 30% 70% at 58% 55%, rgba(246,193,42,.28), rgba(246,193,42,0) 70%)",
+  "linear-gradient(90deg, #035580 0%, #0f5a8a 20%, #1672ad 38%, #3d91c9 56%, #72b6e2 74%, #9fd2f0 88%, #b8def5 100%)",
 ].join(",");
 
 export function Hero() {
@@ -54,13 +54,18 @@ export function Hero() {
             style={{ top: b.top, left: b.left, width: b.size, height: b.size }}
           />
         ))}
-        <div className="absolute top-[15px] right-[7%] hidden h-[545px] w-[36%] max-w-[700px] lg:block">
-          <SmartImage src={img("hero-bouquet")} alt="" fill priority sizes="36vw" className="object-contain object-top" />
-        </div>
+        {/* Desde 1024 px el ramo va en video (generado con Veo a partir de hero-bouquet); en móvil se queda el degradado. */}
+        <HeroVideo
+          poster="/videos/hero-poster.webp"
+          sources={[
+            { src: "/videos/hero.webm", type: "video/webm" },
+            { src: "/videos/hero.mp4", type: "video/mp4" },
+          ]}
+        />
       </div>
 
       <div className="container-page relative pt-16 lg:pt-[140px]">
-        <span className="inline-block rounded-full border border-magenta px-[17px] py-[7px] text-[13px] leading-[1.15] text-white">
+        <span className="inline-block rounded-full border border-sun px-[17px] py-[7px] text-[13px] leading-[1.15] text-white">
           Favoritos
         </span>
         <h1 className="heading mt-7 max-w-[820px] text-[32px] leading-[1.18] text-white md:text-[40px]">
@@ -82,11 +87,11 @@ export function Hero() {
                   sizes="(min-width: 1024px) 25vw, 50vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-[#4b3f7a]/70" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-[#023f60]/70" />
                 <h2 className="heading absolute bottom-5 left-5 text-[16.5px] tracking-normal text-white">{card.title}</h2>
               </Link>
               <p className="mt-5 text-[14px] leading-[1.4] text-muted">{card.text}</p>
-              <Link href={card.href} className="mt-[22px] inline-flex items-center gap-1.5 text-[15px] text-magenta hover:underline">
+              <Link href={card.href} className="mt-[22px] inline-flex items-center gap-1.5 text-[15px] text-cielo hover:underline">
                 {card.cta} <ArrowRight className="size-[15px]" strokeWidth={1.5} />
               </Link>
             </div>

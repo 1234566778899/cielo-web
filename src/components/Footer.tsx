@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { site, whatsappUrl } from "@/lib/site";
+import { ComplaintBookIcon } from "./ComplaintBookIcon";
 import { Logo } from "./Logo";
 import { PaymentIcons } from "./PaymentIcons";
 import { SocialIcons } from "./SocialIcons";
@@ -8,7 +9,7 @@ import { SocialIcons } from "./SocialIcons";
 const toLinks = (labels: string[]) => labels.map((label) => ({ label, href: "#" }));
 
 const columns = [
-  { title: "Enlaces útiles", links: [{ label: "Cambios y devoluciones", href: "/preguntas-frecuentes" }, { label: "Opciones de envío", href: "/opciones-de-envio" }, { label: "Preguntas frecuentes", href: "/preguntas-frecuentes" }, ...toLinks(["Aviso de privacidad", "Términos y condiciones"])] },
+  { title: "Enlaces útiles", links: [{ label: "Cambios y devoluciones", href: "/preguntas-frecuentes" }, { label: "Opciones de envío", href: "/opciones-de-envio" }, { label: "Preguntas frecuentes", href: "/preguntas-frecuentes" }, ...toLinks(["Aviso de privacidad"]), { label: "Términos y condiciones", href: "/terminos-y-condiciones" }] },
   {
     title: "Categorías populares",
     links: [
@@ -25,7 +26,7 @@ const columns = [
 function Newsletter() {
   return (
     <div className="container-page relative">
-      <div className="grid items-center gap-8 rounded-[5px] bg-magenta px-6 py-10 text-white shadow-[0_0_20px_1px_rgba(0,0,0,.1)] md:px-20 lg:h-[229px] lg:grid-cols-[minmax(0,680px)_540px] lg:justify-between lg:py-0">
+      <div className="grid items-center gap-8 rounded-[5px] bg-cielo px-6 py-10 text-white shadow-[0_0_20px_1px_rgba(0,0,0,.1)] md:px-20 lg:h-[229px] lg:grid-cols-[minmax(0,680px)_540px] lg:justify-between lg:py-0">
         <div>
           <h2 className="heading text-[24px] leading-[1.18] md:text-[26.4px]">Flores, detalles y sorpresas.</h2>
           <p className="mt-1.5 text-[17px] leading-[1.2] md:text-[19px]">
@@ -33,12 +34,12 @@ function Newsletter() {
           </p>
         </div>
         <form>
-          <div className="flex h-14 rounded-[5px] border border-[#9b1c66] bg-white p-[3px]">
+          <div className="flex h-14 rounded-[5px] border border-cielo-dark bg-white p-[3px]">
             <input type="email" required placeholder="Tu correo" className="min-w-0 flex-1 px-3.5 text-[14px] text-ink placeholder:text-muted focus:outline-none" />
-            <button className="h-full w-[120px] rounded-[5px] bg-magenta-dark text-[14px] font-bold transition-colors hover:bg-navy">Suscribirme</button>
+            <button className="h-full w-[120px] rounded-[5px] bg-cielo-dark text-[14px] font-bold transition-colors hover:bg-ocean">Suscribirme</button>
           </div>
           <label className="mt-3 flex items-center gap-2.5 text-[15px]">
-            <input type="checkbox" className="size-4 accent-navy" />
+            <input type="checkbox" className="size-4 accent-ocean" />
             Acepto recibir correos con promociones y ofertas especiales.
           </label>
         </form>
@@ -49,16 +50,25 @@ function Newsletter() {
 
 export function Footer() {
   return (
-    <footer className="mt-[60px] bg-[linear-gradient(#fff_0_156px,var(--color-magenta)_156px_189px,var(--color-navy)_189px)] text-white">
+    <footer className="mt-[60px] bg-[linear-gradient(#fff_0_156px,var(--color-cielo)_156px_189px,var(--color-ocean)_189px)] text-white">
       <Newsletter />
       <div className="container-page pt-[61px]">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[240px_240px_240px_240px_382px] lg:justify-between lg:gap-5">
           <div>
-            <Logo markClassName="text-magenta" size="text-[24px]" />
+            <div className="inline-block rounded-[5px] bg-white px-3 py-2.5">
+              <Logo className="h-9" />
+            </div>
             <p className="mt-5 text-[14px] leading-[1.5]">
               Flores artificiales y regalos, {site.address}
             </p>
             <p className="mt-5 text-[14px] leading-[1.5]">{site.hours}</p>
+            <Link
+              href="/libro-de-reclamaciones"
+              className="mt-5 inline-flex items-center gap-3 rounded-[5px] bg-white py-2 pr-4 pl-3 text-ocean transition-colors hover:bg-mist"
+            >
+              <ComplaintBookIcon className="size-9" />
+              <span className="text-[13px] leading-tight font-bold">Libro de<br />Reclamaciones</span>
+            </Link>
           </div>
           {columns.map((col) => (
             <div key={col.title}>
@@ -75,7 +85,7 @@ export function Footer() {
           <div>
             <h3 className="heading text-[15px]">¿Necesitas ayuda?</h3>
             <p className="mt-5 text-[14px] leading-[1.5]">
-              ¿Tienes una pregunta sobre tu pedido, un producto o necesitas ideas para regalar? Nuestro equipo de Cielo Online está
+              ¿Tienes una pregunta sobre tu pedido, un producto o necesitas ideas para regalar? Nuestro equipo de {site.name} está
               listo para ayudarte. ¡Escríbenos por WhatsApp al {site.phoneDisplay}!
             </p>
             <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-[14px] underline underline-offset-4">Escríbenos por WhatsApp</a>
@@ -90,7 +100,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 py-5 text-[13px] md:h-16 md:flex-row md:py-0">
           <button className="flex items-center gap-1">{site.currencyLabel} <ChevronDown className="size-4 opacity-70" strokeWidth={1.5} /></button>
-          <p>© {new Date().getFullYear()}, Cielo Online</p>
+          <p>© {new Date().getFullYear()}, {site.name} Detalles</p>
           <PaymentIcons />
         </div>
       </div>

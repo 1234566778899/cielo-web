@@ -29,7 +29,7 @@ export function ThankYou({ orderId }: { orderId: string }) {
         main={
           <div className="py-16 text-center">
             <h1 className="text-[21px] font-bold text-ink">No encontramos este pedido</h1>
-            <Link href="/" className="mt-4 inline-block text-[14px] text-magenta hover:underline">Volver a la tienda</Link>
+            <Link href="/" className="mt-4 inline-block text-[14px] text-cielo hover:underline">Volver a la tienda</Link>
           </div>
         }
         summary={null}
@@ -46,7 +46,7 @@ export function ThankYou({ orderId }: { orderId: string }) {
       main={
         <div className="text-[14px] leading-[1.5] text-muted">
           <div className="flex items-center gap-3">
-            <CheckCircle2 className="size-11 shrink-0 text-magenta" strokeWidth={1.3} />
+            <CheckCircle2 className="size-11 shrink-0 text-cielo" strokeWidth={1.3} />
             <div>
               <p className="text-[13px]">Pedido #{order.number}</p>
               <h1 className="text-[21px] font-bold leading-tight text-ink">¡Gracias{name ? `, ${name}` : ""}!</h1>
@@ -69,7 +69,7 @@ export function ThankYou({ orderId }: { orderId: string }) {
               href={whatsappUrl(`Hola, acabo de hacer el pedido #${order.number}.`)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-grid h-10 place-items-center rounded-[5px] bg-magenta px-4 text-[13px] font-bold text-white hover:bg-magenta-dark"
+              className="mt-3 inline-grid h-10 place-items-center rounded-[5px] bg-cielo px-4 text-[13px] font-bold text-white hover:bg-cielo-dark"
             >
               Escribirnos por WhatsApp
             </a>
@@ -113,7 +113,7 @@ export function ThankYou({ orderId }: { orderId: string }) {
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
             <p>
               ¿Necesitas ayuda?{" "}
-              <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="text-magenta underline underline-offset-2">Contáctanos</a>
+              <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="text-cielo underline underline-offset-2">Contáctanos</a>
             </p>
             <div className="flex gap-3">
               {customer && customer.email === order.email && (
@@ -121,7 +121,7 @@ export function ThankYou({ orderId }: { orderId: string }) {
                   Ver pedido
                 </Link>
               )}
-              <Link href="/" className="grid h-11 place-items-center rounded-[5px] bg-navy px-5 text-[14px] font-bold text-white hover:bg-navy-dark">
+              <Link href="/" className="grid h-11 place-items-center rounded-[5px] bg-ocean px-5 text-[14px] font-bold text-white hover:bg-ocean-dark">
                 Seguir comprando
               </Link>
             </div>

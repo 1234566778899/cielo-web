@@ -26,7 +26,7 @@ export function FaqList({ items, defaultOpen = 0 }: { items: Faq[]; defaultOpen?
               >
                 <span className="heading pt-1.5 text-[16.5px] leading-[19.5px] text-ink">{item.q}</span>
                 <span
-                  className={`grid size-8 shrink-0 place-items-center rounded-[5px] border border-navy ${expanded ? "bg-white text-navy" : "bg-navy text-white"}`}
+                  className={`grid size-8 shrink-0 place-items-center rounded-[5px] border border-ocean ${expanded ? "bg-white text-ocean" : "bg-ocean text-white"}`}
                   aria-hidden
                 >
                   {expanded ? <Minus className="size-4" strokeWidth={1.5} /> : <Plus className="size-4" strokeWidth={1.5} />}
@@ -34,7 +34,7 @@ export function FaqList({ items, defaultOpen = 0 }: { items: Faq[]; defaultOpen?
               </button>
             </h3>
             {expanded && (
-              <div id={id} className="mt-2.5 text-[14px] leading-[21px] text-muted [&_a]:text-magenta [&_a]:underline [&_p+p]:mt-2.5">
+              <div id={id} className="mt-2.5 text-[14px] leading-[21px] text-muted [&_a]:text-cielo [&_a]:underline [&_p+p]:mt-2.5">
                 {item.a}
               </div>
             )}

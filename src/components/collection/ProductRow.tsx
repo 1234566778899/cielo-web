@@ -15,7 +15,7 @@ export function ProductRow({ product, compact = false }: { product: Product; com
       <Link href={`/producto/${product.slug}`} className={`relative shrink-0 overflow-hidden ${compact ? "size-20" : "size-[200px]"}`}>
         <SmartImage src={product.image} alt={product.name} fill sizes={compact ? "80px" : "200px"} className="object-contain transition-transform duration-300 group-hover:scale-105" />
         {onSale && !compact && (
-          <span className="absolute top-0 right-0 grid h-[22px] place-items-center rounded-[20px] bg-magenta px-2 text-[12px] leading-none text-white">-{discount}%</span>
+          <span className="absolute top-0 right-0 grid h-[22px] place-items-center rounded-[20px] bg-cielo px-2 text-[12px] leading-none text-white">-{discount}%</span>
         )}
       </Link>
 
@@ -46,14 +46,14 @@ export function ProductRow({ product, compact = false }: { product: Product; com
       <div className={`shrink-0 text-right ${compact ? "flex items-center gap-5" : "w-[200px]"}`}>
         <div>
           <p className="flex items-baseline justify-end gap-1.5 leading-[17px]">
-            <span className={`text-[16px] ${onSale ? "text-sale" : "text-navy"}`}>{formatPrice(product.price)}</span>
+            <span className={`text-[16px] ${onSale ? "text-sale" : "text-ocean"}`}>{formatPrice(product.price)}</span>
             <span className="text-[11px] text-muted">IGV incl.</span>
           </p>
           {onSale && <p className="mt-0.5 text-[12px] leading-[15px] text-muted line-through">{formatPrice(product.compareAtPrice!)}</p>}
         </div>
         <AddToCartButton
           product={product}
-          className={`h-11 rounded-[5px] bg-navy text-[14px] font-bold text-white transition-colors hover:bg-navy-dark ${compact ? "px-5" : "mt-3.5 w-full"}`}
+          className={`h-11 rounded-[5px] bg-ocean text-[14px] font-bold text-white transition-colors hover:bg-ocean-dark ${compact ? "px-5" : "mt-3.5 w-full"}`}
         />
       </div>
     </article>

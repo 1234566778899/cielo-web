@@ -35,19 +35,19 @@ export function CartDrawer() {
         aria-label="Tu carrito"
         className={`absolute top-0 right-0 flex h-full w-full max-w-[400px] flex-col overflow-hidden bg-white shadow-[0_2px_10px_rgba(0,0,0,.3)] transition-transform duration-300 sm:top-[15px] sm:right-[15px] sm:h-[calc(100%-30px)] sm:rounded-[5px] ${isOpen ? "translate-x-0" : "translate-x-[calc(100%+20px)]"}`}
       >
-        <header className="flex h-16 shrink-0 items-center justify-between bg-magenta px-[15px] text-white">
+        <header className="flex h-16 shrink-0 items-center justify-between bg-cielo px-[15px] text-white">
           <h2 className="heading text-[16.5px]">Tu carrito</h2>
           <button onClick={close} aria-label="Cerrar carrito" className="grid size-8 place-items-center rounded-[5px] border border-[#dfdfdf] bg-white text-muted">
             <X className="size-4" strokeWidth={1.5} />
           </button>
         </header>
-        {freeShipping.message && <p className="flex h-[41px] shrink-0 items-center bg-magenta-dark px-[15px] text-[13px] text-white">{freeShipping.message}</p>}
+        {freeShipping.message && <p className="flex h-[41px] shrink-0 items-center bg-cielo-dark px-[15px] text-[13px] text-white">{freeShipping.message}</p>}
 
         <div className="flex-1 overflow-y-auto p-[15px]">
           {lines.length === 0 ? (
             <div className="py-16 text-center">
               <p className="text-[15px] text-muted">Tu carrito está vacío.</p>
-              <button onClick={close} className="mt-4 text-[14px] text-magenta underline underline-offset-4">Seguir comprando</button>
+              <button onClick={close} className="mt-4 text-[14px] text-cielo underline underline-offset-4">Seguir comprando</button>
             </div>
           ) : (
             <ul className="space-y-[35px]">
@@ -68,10 +68,10 @@ export function CartDrawer() {
                       <strong className="font-bold text-ink">{formatPrice(l.unitPrice)}</strong>
                     </p>
                     {l.product.options.length > 0 && <p className="text-[12px] text-muted">{l.variant.title}</p>}
-                    {l.giftWrap && <p className="text-[12px] text-magenta">Envuelto para regalo</p>}
+                    {l.giftWrap && <p className="text-[12px] text-cielo">Envuelto para regalo</p>}
                     <div className="mt-3.5 flex items-center gap-[30px]">
                       <QuantityStepper size="sm" min={0} value={l.quantity} onChange={(q) => setQuantity(l.variantId, q)} />
-                      <button onClick={() => remove(l.variantId)} className="text-[13px] text-muted hover:text-magenta">Eliminar</button>
+                      <button onClick={() => remove(l.variantId)} className="text-[13px] text-muted hover:text-cielo">Eliminar</button>
                     </div>
                   </div>
                 </li>
@@ -80,7 +80,7 @@ export function CartDrawer() {
           )}
         </div>
 
-        <footer className="shrink-0 bg-[#fff5fb] p-[15px]">
+        <footer className="shrink-0 bg-mist p-[15px]">
           <div className="flex justify-between text-[13px] leading-[21px] font-bold text-ink">
             <span>Total</span>
             <span>{formatPrice(subtotal)} PEN</span>
@@ -89,10 +89,10 @@ export function CartDrawer() {
             <TermsCheckbox checked={accepted} onChange={setAccepted} />
           </div>
           <div className="mt-[15px] grid grid-cols-2 gap-[15px]">
-            <Link href="/carrito" onClick={close} className="grid h-11 place-items-center rounded-[5px] bg-magenta text-[14px] font-bold text-white hover:bg-magenta-dark">
+            <Link href="/carrito" onClick={close} className="grid h-11 place-items-center rounded-[5px] bg-cielo text-[14px] font-bold text-white hover:bg-cielo-dark">
               Ver carrito
             </Link>
-            <CheckoutButton accepted={accepted} className="h-11 rounded-[5px] bg-navy text-[14px] font-bold text-white hover:bg-navy-dark" />
+            <CheckoutButton accepted={accepted} className="h-11 rounded-[5px] bg-ocean text-[14px] font-bold text-white hover:bg-ocean-dark" />
           </div>
         </footer>
       </aside>

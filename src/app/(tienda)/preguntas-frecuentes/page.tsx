@@ -8,7 +8,7 @@ import { formatPrice } from "@/lib/format";
 import { img } from "@/lib/images";
 import { site, whatsappUrl } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Preguntas frecuentes | Cielo Online" };
+export const metadata: Metadata = { title: "Preguntas frecuentes" };
 export const revalidate = 60;
 
 const wa = (text: string, label = "WhatsApp") => (
@@ -81,7 +81,7 @@ export default async function FaqPage() {
       items: [
         {
           q: "¿Qué métodos de pago aceptan?",
-          a: <p>Yape, Plin, transferencia bancaria (BCP e Interbank) y tarjetas de crédito o débito mediante un link de pago seguro. Todos los precios están en soles e incluyen IGV.</p>,
+          a: <p>Por ahora aceptamos Yape, Plin y transferencia bancaria (BCP e Interbank). Todos los precios están en soles e incluyen IGV.</p>,
         },
         {
           q: "¿Cómo pago con Yape o Plin?",
@@ -126,10 +126,10 @@ export default async function FaqPage() {
       <section className="container-narrow mt-[50px] text-center">
         <p className="text-[15px] text-muted">¿No encontraste lo que buscabas?</p>
         <a
-          href={whatsappUrl("Hola Cielo Online, tengo una consulta.")}
+          href={whatsappUrl(`Hola ${site.name}, tengo una consulta.`)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-grid h-11 place-items-center rounded-[5px] bg-navy px-6 text-[14px] font-bold text-white hover:bg-navy-dark"
+          className="mt-4 inline-grid h-11 place-items-center rounded-[5px] bg-ocean px-6 text-[14px] font-bold text-white hover:bg-ocean-dark"
         >
           Escríbenos por WhatsApp
         </a>

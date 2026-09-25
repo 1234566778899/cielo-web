@@ -69,7 +69,7 @@ export function RecentlyViewed({ currentSlug }: { currentSlug: string }) {
             footer={
               <div className="mt-4 flex items-center justify-between text-[13px] text-muted">
                 <span>{timeAgo(viewedAt)}</span>
-                <button onClick={() => dismiss(product.slug)} className="text-magenta underline underline-offset-4">Descartar</button>
+                <button onClick={() => dismiss(product.slug)} className="text-cielo underline underline-offset-4">Descartar</button>
               </div>
             }
           />

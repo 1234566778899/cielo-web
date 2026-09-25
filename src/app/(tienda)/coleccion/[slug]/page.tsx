@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 export async function generateMetadata(props: PageProps<"/coleccion/[slug]">): Promise<Metadata> {
   const { slug } = await props.params;
   const collection = resolveCollection(await getCatalog(), slug);
-  return { title: collection ? `${collection.title} | Cielo Online` : "Colección no encontrada" };
+  return { title: collection ? `${collection.title}` : "Colección no encontrada" };
 }
 
 const banners: Banner[] = [

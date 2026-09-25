@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #2f1c78;
-  --color-navy-dark: #24155e;
-  --color-magenta: #b31f75;
-  --color-magenta-dark: #841a58;
-  --color-lilac: #9c72d4;
-  --color-sky: #93bdf0;
-  --color-sun: #ffcc00;
+  /* Paleta del logo Mar del Cielo: azul océano, celeste, dorado y amarillo girasol. */
+  --color-ocean: #035580;
+  --color-ocean-dark: #023f60;
+  --color-cielo: #1672ad;
+  --color-cielo-dark: #0f5a8a;
+  --color-gold: #bf8a2f;
+  --color-gold-dark: #9a6b1f;
+  --color-sky: #9fd2f0;
+  --color-mist: #eef6fc;
+  --color-sun: #f6c12a;
   --color-stock: #43b000;
   --color-sale: #e13a3a;
   --color-ink: #363636;

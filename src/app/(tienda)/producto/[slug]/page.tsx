@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 export async function generateMetadata(props: PageProps<"/producto/[slug]">): Promise<Metadata> {
   const { slug } = await props.params;
   const product = getProduct(await getCatalog(), slug);
-  return { title: product ? `${product.name} | Cielo Online` : "Producto no encontrado" };
+  return { title: product ? `${product.name}` : "Producto no encontrado" };
 }
 
 const perks = [
@@ -105,7 +105,7 @@ export default async function ProductPage(props: PageProps<"/producto/[slug]">) 
 
           <p className="mt-[30px] text-[15px] leading-[1.5] text-muted">
             Puedes recoger este producto en nuestra tienda -{" "}
-            <Link href="/tiendas" className="text-magenta hover:underline">Ver información de la tienda</Link>
+            <Link href="/tiendas" className="text-cielo hover:underline">Ver información de la tienda</Link>
           </p>
 
           <ul className="mt-[30px] grid gap-5 sm:grid-cols-3">
@@ -117,13 +117,13 @@ export default async function ProductPage(props: PageProps<"/producto/[slug]">) 
             ))}
           </ul>
 
-          <div className="mt-[30px] flex gap-[15px] rounded-[5px] bg-magenta p-5 text-white">
+          <div className="mt-[30px] flex gap-[15px] rounded-[5px] bg-cielo p-5 text-white">
             <Info className="size-10 shrink-0" strokeWidth={1.2} />
             <div>
               <h2 className="heading text-[16.5px] leading-5">Métodos de pago</h2>
               <PaymentIcons size="sm" className="mt-[9px]" />
               <p className="mt-2.5 text-[13px] leading-[1.5]">
-                Aceptamos <strong className="font-bold">todos los métodos de pago principales</strong> para que compres con total tranquilidad.
+                Paga con <strong className="font-bold">Yape, Plin o transferencia bancaria</strong>. Preparamos tu pedido en cuanto confirmamos el pago.
               </p>
             </div>
           </div>

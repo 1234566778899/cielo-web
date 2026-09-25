@@ -11,7 +11,7 @@ import { useAccount } from "./AccountProvider";
 // Activa el botón cuando Google esté habilitado en Supabase → Authentication → Providers.
 const googleEnabled = process.env.NEXT_PUBLIC_AUTH_GOOGLE === "true";
 
-const input = "h-[46px] w-full rounded-[5px] border border-[#dfdfdf] bg-white px-3.5 text-[14px] text-ink placeholder:text-muted focus:outline-2 focus:outline-navy";
+const input = "h-[46px] w-full rounded-[5px] border border-[#dfdfdf] bg-white px-3.5 text-[14px] text-ink placeholder:text-muted focus:outline-2 focus:outline-ocean";
 
 /** Acceso sin contraseña: correo -> código de 6 dígitos (como las cuentas de la plantilla y el OTP de Supabase). */
 export function LoginFlow() {
@@ -39,7 +39,7 @@ export function LoginFlow() {
   return (
     <div className="flex min-h-screen flex-col items-center bg-white px-5">
       <header className="flex h-[92px] items-center">
-        <Logo dark markClassName="text-magenta" size="text-[24px]" />
+        <Logo className="h-11" priority />
       </header>
 
       <main className="flex w-full flex-1 items-center justify-center pb-16">
@@ -60,7 +60,7 @@ export function LoginFlow() {
                       });
                       if (error) setNotice(error.message);
                     }}
-                    className="mt-5 flex h-11 w-full items-center justify-center gap-2 rounded-[5px] bg-magenta text-[15px] font-bold text-white hover:bg-magenta-dark"
+                    className="mt-5 flex h-11 w-full items-center justify-center gap-2 rounded-[5px] bg-cielo text-[15px] font-bold text-white hover:bg-cielo-dark"
                   >
                     <svg viewBox="0 0 24 24" className="size-[18px]" aria-hidden>
                       <path fill="#fff" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3Z" />
@@ -126,13 +126,13 @@ export function LoginFlow() {
                   className={`${input} tracking-[.3em]`}
                 />
                 {error && <p role="alert" className="text-[13px] text-sale">{error}</p>}
-                <button disabled={busy} className="h-11 w-full rounded-[5px] bg-navy text-[15px] font-bold text-white hover:bg-navy-dark disabled:opacity-60">{busy ? "Verificando…" : "Continuar"}</button>
+                <button disabled={busy} className="h-11 w-full rounded-[5px] bg-ocean text-[15px] font-bold text-white hover:bg-ocean-dark disabled:opacity-60">{busy ? "Verificando…" : "Continuar"}</button>
               </form>
               <p className="mt-3 text-[12px] text-muted">También puedes abrir el enlace del correo en este navegador.</p>
               {notice && <p className="mt-2 text-[13px] text-stock">{notice}</p>}
               <div className="mt-5 flex justify-between text-[13px]">
-                <button onClick={async () => { if (await send(pendingEmail)) setNotice("Te enviamos un nuevo código."); }} className="text-magenta hover:underline">Reenviar código</button>
-                <button onClick={() => { setCode(""); setError(null); cancelLogin(); }} className="text-magenta hover:underline">Usar otro correo</button>
+                <button onClick={async () => { if (await send(pendingEmail)) setNotice("Te enviamos un nuevo código."); }} className="text-cielo hover:underline">Reenviar código</button>
+                <button onClick={() => { setCode(""); setError(null); cancelLogin(); }} className="text-cielo hover:underline">Usar otro correo</button>
               </div>
             </>
           )}
@@ -140,7 +140,7 @@ export function LoginFlow() {
       </main>
 
       <footer className="flex h-16 items-center gap-5 text-[13px]">
-        <Link href="#" className="text-magenta hover:underline">Aviso de privacidad</Link>
+        <Link href="#" className="text-cielo hover:underline">Aviso de privacidad</Link>
         <Link href="/" className="text-muted hover:underline">Volver a la tienda</Link>
       </footer>
     </div>

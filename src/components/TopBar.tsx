@@ -9,12 +9,12 @@ export function TopBar() {
   return (
     <>
     {/* Móvil: solo redes sociales, como la plantilla. */}
-    <div className="bg-navy text-white md:hidden">
+    <div className="bg-ocean text-white md:hidden">
       <div className="container-page flex h-[34px] items-center justify-center">
         <SocialIcons gap="gap-[22px]" />
       </div>
     </div>
-    <div className="hidden bg-navy text-white md:block">
+    <div className="hidden bg-ocean text-white md:block">
       <div className="container-page flex h-[45px] items-center justify-between text-[15px]">
         <nav className="flex gap-4">
           {links.map((l) => (

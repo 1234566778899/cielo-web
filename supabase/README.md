@@ -1,4 +1,4 @@
-# Supabase · Cielo Online
+# Supabase · Mar del Cielo
 
 Base de datos compartida por la tienda (`/`) y el panel (`/admin`).
 
@@ -38,6 +38,8 @@ Base de datos compartida por la tienda (`/`) y el panel (`/admin`).
 | `…1100_admin_views` | Vistas para las listas del panel |
 | `…1200_rls` | Políticas de seguridad y bucket `product-images` |
 | `…1300_promotion_workflow` | Crear/editar descuentos |
+| `…1400_storefront` | RPC de la tienda (ver abajo) |
+| `20260925000100_complaint_book` | Libro de reclamaciones: tabla `complaint`, `store_submit_complaint(p)` (anon) y `admin_answer_complaint(id, respuesta)` |
 
 ## Workflows (RPC)
 
@@ -64,6 +66,7 @@ Migración `20260924001400_storefront.sql`:
 | `store_place_order(p)` | anon | Checkout (ya existía). |
 | `store_link_customer()` | authenticated | Al iniciar sesión crea el cliente o lo vincula con sus compras como invitado (mismo correo). |
 | `store_update_customer(p)` | authenticated | El cliente edita nombre, teléfono y marketing (ya no puede hacer UPDATE directo a `customer`). |
+| `store_submit_complaint(p)` | anon | Registra una hoja del libro de reclamaciones y devuelve su código `LR-AAAA-000001` (migración `20260925000100_complaint_book.sql`). |
 
 ### Supabase Auth para clientes (código por correo)
 

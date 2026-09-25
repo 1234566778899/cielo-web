@@ -5,8 +5,9 @@ import { Marquee } from "@/components/pages/Marquee";
 import { StoresMap } from "@/components/pages/StoresMap";
 import { SmartImage } from "@/components/SmartImage";
 import { img } from "@/lib/images";
+import { site } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Tiendas | Cielo Online" };
+export const metadata: Metadata = { title: "Tiendas" };
 
 export default function StoresPage() {
   return (
@@ -15,11 +16,11 @@ export default function StoresPage() {
 
       <section className="container-page mt-[70px] grid items-center gap-10 lg:grid-cols-2 lg:gap-[45px]">
         <div className="relative aspect-[622/466] overflow-hidden rounded-[5px]">
-          <SmartImage src={img("stores-intro")} alt="Interior de la tienda Cielo Online" fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+          <SmartImage src={img("stores-intro")} alt={`Interior de la tienda ${site.name}`} fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
         </div>
         <div>
-          <span className="inline-block rounded-full border border-magenta px-[17px] py-[7px] text-[13px] leading-[1.15] text-ink">Nuestras tiendas</span>
-          <h1 className="heading mt-4 text-[28px] leading-[1.18] text-ink md:text-[33px]">Vive la experiencia Cielo Online</h1>
+          <span className="inline-block rounded-full border border-cielo px-[17px] py-[7px] text-[13px] leading-[1.15] text-ink">Nuestras tiendas</span>
+          <h1 className="heading mt-4 text-[28px] leading-[1.18] text-ink md:text-[33px]">Vive la experiencia {site.name}</h1>
           <p className="mt-5 text-[15px] leading-[1.5] text-muted">
             ¡Bienvenido a nuestro rincón floral! Nuestras tiendas son mucho más que un lugar para comprar: aquí nuestros floristas te ayudan a armar el
             regalo perfecto, puedes ver y tocar la calidad de nuestras flores artificiales y descubrir cajas, peluches y detalles para cada ocasión.

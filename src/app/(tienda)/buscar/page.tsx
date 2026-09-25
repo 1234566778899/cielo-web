@@ -9,7 +9,7 @@ import { getCatalog } from "@/lib/catalog/server";
 
 export async function generateMetadata(props: PageProps<"/buscar">): Promise<Metadata> {
   const { q } = await props.searchParams;
-  return { title: q ? `Búsqueda: “${q}” | Cielo Online` : "Buscar | Cielo Online" };
+  return { title: q ? `Búsqueda: “${q}”` : "Buscar" };
 }
 
 export default async function SearchPage(props: PageProps<"/buscar">) {
@@ -37,9 +37,9 @@ export default async function SearchPage(props: PageProps<"/buscar">) {
             </p>
             <form action="/buscar" className="mx-auto mt-6 flex max-w-[540px] rounded-[5px] border border-[#dfdfdf] p-[3px]">
               <input name="q" defaultValue={q} placeholder="Buscar productos" className="min-w-0 flex-1 px-4 text-[14px] text-ink focus:outline-none" />
-              <button className="h-11 rounded-[5px] bg-navy px-6 text-[14px] font-bold text-white hover:bg-navy-dark">Buscar</button>
+              <button className="h-11 rounded-[5px] bg-ocean px-6 text-[14px] font-bold text-white hover:bg-ocean-dark">Buscar</button>
             </form>
-            <Link href="/coleccion/todos" className="mt-4 inline-block text-[15px] text-magenta hover:underline">Ver todos los productos</Link>
+            <Link href="/coleccion/todos" className="mt-4 inline-block text-[15px] text-cielo hover:underline">Ver todos los productos</Link>
           </section>
           <section className="container-page mt-[60px]">
             <SectionHeading title="Te podría gustar" subtitle="Los favoritos de nuestros clientes." />

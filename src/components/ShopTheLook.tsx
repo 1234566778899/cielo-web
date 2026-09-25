@@ -9,10 +9,11 @@ import type { Product } from "@/lib/types";
 import { SectionHeading } from "./SectionHeading";
 import { SmartImage } from "./SmartImage";
 
+// Sobre la foto look-sala: caja de regalo, ramo y peluche.
 const positions = [
-  { top: "58%", left: "44%" },
-  { top: "66%", left: "58%" },
-  { top: "62%", left: "30%" },
+  { top: "72%", left: "62%" },
+  { top: "34%", left: "45%" },
+  { top: "60%", left: "80%" },
 ];
 
 /** Foto con puntos que muestran los productos de la escena (hasta 3). */
@@ -30,9 +31,9 @@ export function ShopTheLook({ products }: { products: (Product | undefined)[] })
             <button
               onClick={() => setActive(active === i ? null : i)}
               aria-label={`Ver ${h.product.name}`}
-              className="relative grid size-[34px] -translate-1/2 place-items-center rounded-full bg-magenta text-white shadow-lg transition-transform hover:scale-110"
+              className="relative grid size-[34px] -translate-1/2 place-items-center rounded-full bg-cielo text-white shadow-lg transition-transform hover:scale-110"
             >
-              <span className="absolute inset-0 animate-ping rounded-full bg-magenta/50" />
+              <span className="absolute inset-0 animate-ping rounded-full bg-cielo/50" />
               <Plus className={`relative size-4 transition-transform ${active === i ? "rotate-45" : ""}`} />
             </button>
             {active === i && (
@@ -45,7 +46,7 @@ export function ShopTheLook({ products }: { products: (Product | undefined)[] })
                 </span>
                 <span>
                   <span className="block text-[14px] leading-tight text-ink">{h.product.name}</span>
-                  <span className="mt-1 block text-[15px] text-navy">{formatPrice(h.product.price)}</span>
+                  <span className="mt-1 block text-[15px] text-ocean">{formatPrice(h.product.price)}</span>
                 </span>
               </Link>
             )}

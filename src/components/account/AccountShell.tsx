@@ -40,10 +40,10 @@ export function AccountShell({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen flex-col bg-[#f5f5f5]">
       <header className="border-b border-[#dfdfdf] bg-white">
         <div className="mx-auto flex h-[72px] max-w-[1040px] items-center gap-10 px-5">
-          <Logo dark markClassName="text-magenta" size="text-[22px]" />
+          <Logo className="h-8" />
           <nav className="hidden gap-7 text-[15px] sm:flex">
             {nav.map((n) => (
-              <Link key={n.href} href={n.href} className={`py-6 ${active(n.href) ? "border-b-2 border-magenta font-bold text-ink" : "text-muted hover:text-ink"}`}>
+              <Link key={n.href} href={n.href} className={`py-6 ${active(n.href) ? "border-b-2 border-cielo font-bold text-ink" : "text-muted hover:text-ink"}`}>
                 {n.label}
               </Link>
             ))}
@@ -51,7 +51,7 @@ export function AccountShell({ children }: { children: React.ReactNode }) {
           {customer && (
             <div ref={menuRef} className="relative ml-auto">
               <button onClick={() => setMenu(!menu)} aria-expanded={menu} className="flex items-center gap-2 rounded-[5px] px-2 py-1.5 hover:bg-muted/5">
-                <span className="grid size-8 place-items-center rounded-full bg-magenta text-[14px] font-bold text-white">{initials}</span>
+                <span className="grid size-8 place-items-center rounded-full bg-cielo text-[14px] font-bold text-white">{initials}</span>
                 <ChevronDown className="size-4 text-muted" strokeWidth={1.5} />
               </button>
               {menu && (
@@ -76,7 +76,7 @@ export function AccountShell({ children }: { children: React.ReactNode }) {
         </div>
         <nav className="mx-auto flex max-w-[1040px] gap-6 px-5 text-[14px] sm:hidden">
           {nav.map((n) => (
-            <Link key={n.href} href={n.href} className={`pb-3 ${active(n.href) ? "border-b-2 border-magenta font-bold text-ink" : "text-muted"}`}>
+            <Link key={n.href} href={n.href} className={`pb-3 ${active(n.href) ? "border-b-2 border-cielo font-bold text-ink" : "text-muted"}`}>
               {n.label}
             </Link>
           ))}
@@ -89,8 +89,8 @@ export function AccountShell({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t border-[#dfdfdf] bg-white">
         <div className="mx-auto flex h-14 max-w-[1040px] items-center gap-5 px-5 text-[13px]">
-          <Link href="#" className="text-magenta hover:underline">Aviso de privacidad</Link>
-          <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="text-magenta hover:underline">Ayuda por WhatsApp</a>
+          <Link href="#" className="text-cielo hover:underline">Aviso de privacidad</Link>
+          <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="text-cielo hover:underline">Ayuda por WhatsApp</a>
         </div>
       </footer>
     </div>

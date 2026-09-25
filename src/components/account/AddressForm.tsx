@@ -3,7 +3,7 @@
 import { departments } from "@/lib/peru";
 import type { Address } from "@/lib/types";
 
-export const fieldClass = "h-[46px] w-full rounded-[5px] border border-[#dfdfdf] bg-white px-3.5 text-[14px] text-ink placeholder:text-muted focus:outline-2 focus:outline-navy";
+export const fieldClass = "h-[46px] w-full rounded-[5px] border border-[#dfdfdf] bg-white px-3.5 text-[14px] text-ink placeholder:text-muted focus:outline-2 focus:outline-ocean";
 
 export type AddressFields = Omit<Address, "id" | "isDefault">;
 

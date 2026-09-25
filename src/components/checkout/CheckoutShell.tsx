@@ -10,12 +10,12 @@ export function CheckoutShell({ main, summary, mobileSummary }: { main: React.Re
         <div className="grid h-[57px] lg:grid-cols-2">
           <div className="flex items-center px-5 lg:justify-end lg:pr-9">
             <div className="w-full lg:max-w-[436px]">
-              <Logo dark markClassName="text-magenta" size="text-[22px]" />
+              <Logo className="h-8" />
             </div>
           </div>
           <div className="absolute right-5 flex h-[57px] items-center lg:static lg:px-9 lg:pl-9">
             <div className="flex w-full justify-end lg:max-w-[350px]">
-              <Link href="/carrito" aria-label="Volver al carrito" className="text-magenta hover:opacity-80">
+              <Link href="/carrito" aria-label="Volver al carrito" className="text-cielo hover:opacity-80">
                 <ShoppingBag className="size-6" strokeWidth={1.5} />
               </Link>
             </div>

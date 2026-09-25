@@ -1,5 +1,6 @@
 import { defaultDescription, defaultFeatures } from "@/data/catalog";
 import { filterGroups, RECIPIENT_COLLECTIONS } from "@/data/collections";
+import { site } from "@/lib/site";
 import type { Catalog, Product, Variant } from "@/lib/types";
 
 /** Forma de la respuesta de la RPC `store_catalog()` (ver supabase/migrations/…1400_storefront.sql). */
@@ -44,7 +45,7 @@ function mapProduct(p: CatalogRow["products"][number]): Product {
     slug: p.handle,
     sku: main.sku,
     name: p.title,
-    brand: p.vendor ?? "Cielo Online",
+    brand: p.vendor ?? site.name,
     image,
     gallery: p.images.length ? p.images : [image],
     price: main.price,

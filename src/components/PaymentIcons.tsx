@@ -1,10 +1,8 @@
+// Por ahora solo se cobra por Yape/Plin y transferencia bancaria.
 const payments = [
-  { label: "VISA", className: "bg-[#1a1f71] text-white italic" },
-  { label: "MC", className: "bg-[#252525] text-[#f79e1b]" },
-  { label: "AMEX", className: "bg-[#2e77bc] text-white" },
-  { label: "PayPal", className: "bg-white text-[#003087]" },
   { label: "Yape", className: "bg-[#742284] text-white" },
   { label: "Plin", className: "bg-[#00c1d5] text-white" },
+  { label: "Transf.", className: "bg-ocean text-white" },
 ];
 
 export function PaymentIcons({ className = "", size = "md" }: { className?: string; size?: "sm" | "md" }) {
