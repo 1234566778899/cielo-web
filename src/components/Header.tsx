@@ -14,7 +14,7 @@ export function Header() {
         {/* Móvil: menú + logo + cuenta/carrito y el buscador en una segunda fila. */}
         <div className="flex flex-wrap items-center gap-x-2.5 pt-5 pb-[21px] md:h-[81px] md:flex-nowrap md:gap-6 md:pt-[15px] md:pb-0 lg:gap-[45px]">
           <MobileMenu />
-          <Logo className="h-9 sm:h-11 md:h-[50px]" priority />
+          <Logo className="h-9 sm:h-11 md:h-[50px]" preload />
           <HeaderSearch className="order-last mt-1.5 w-full md:order-none md:mt-0 md:w-auto md:flex-1" />
           <a
             href={whatsappUrl()}

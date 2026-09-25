@@ -105,7 +105,7 @@ export default async function FaqPage() {
 
       <section className="container-page pt-[35px] md:pt-[50px]">
         <div className="relative grid h-[348px] place-items-center overflow-hidden rounded-[5px] text-center text-white md:h-[440px]">
-          <SmartImage src={img("faq-hero")} alt="" fill priority sizes="100vw" className="object-cover" />
+          <SmartImage src={img("faq-hero")} alt="" fill preload sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-black/35" />
           <div className="relative px-5">
             <h1 className="heading text-[26.4px] leading-[31.2px] md:text-[39.6px] md:leading-[1.18]">Preguntas frecuentes</h1>

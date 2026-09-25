@@ -11,8 +11,9 @@
   --color-sky: #9fd2f0;
   --color-mist: #eef6fc;
   --color-sun: #f6c12a;
-  --color-stock: #43b000;
-  --color-sale: #e13a3a;
+  /* Verde y rojo con contraste AA (≥ 4.5:1) sobre blanco. */
+  --color-stock: #2e7d00;
+  --color-sale: #d32f2f;
   --color-ink: #363636;
   --color-muted: #5c5c5c;
   --color-line: #e3e3e3;
@@ -26,6 +27,17 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: 15px;
+}
+
+/* Safari de iPhone/iPad hace zoom al enfocar un campo con letra menor a 16px. Solo en iOS
+   (-webkit-touch-callout no existe en otros navegadores) subimos los campos a 16px; al estar
+   fuera de @layer, esta regla gana a utilidades como text-[14px]. */
+@supports (-webkit-touch-callout: none) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
 }
 
 .container-page {

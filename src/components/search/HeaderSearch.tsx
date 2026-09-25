@@ -89,7 +89,7 @@ export function HeaderSearch({ className = "" }: { className?: string }) {
             <X className="size-4" />
           </button>
         )}
-        <button type="submit" aria-label="Buscar" className="absolute top-1/2 right-4 -translate-y-1/2 text-ink">
+        <button type="submit" aria-label="Buscar" className="absolute top-1/2 right-1.5 grid size-10 -translate-y-1/2 place-items-center text-ink">
           <Search className="size-[22px]" strokeWidth={1.5} />
         </button>
 

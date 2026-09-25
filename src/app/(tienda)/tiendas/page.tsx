@@ -16,7 +16,7 @@ export default function StoresPage() {
 
       <section className="container-page mt-[70px] grid items-center gap-10 lg:grid-cols-2 lg:gap-[45px]">
         <div className="relative aspect-[622/466] overflow-hidden rounded-[5px]">
-          <SmartImage src={img("stores-intro")} alt={`Interior de la tienda ${site.name}`} fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+          <SmartImage src={img("stores-intro")} alt={`Interior de la tienda ${site.name}`} fill preload sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
         </div>
         <div>
           <span className="inline-block rounded-full border border-cielo px-[17px] py-[7px] text-[13px] leading-[1.15] text-ink">Nuestras tiendas</span>

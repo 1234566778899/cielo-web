@@ -23,7 +23,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
         ))}
       </ul>
       <div className="relative aspect-square flex-1">
-        <SmartImage src={images[active]} alt={alt} fill priority sizes="(min-width: 1024px) 40vw, 100vw" className="object-contain" />
+        <SmartImage src={images[active]} alt={alt} fill preload sizes="(min-width: 1024px) 40vw, 100vw" className="object-contain" />
       </div>
     </div>
   );

@@ -41,7 +41,7 @@ export default async function CollectionPage(props: PageProps<"/coleccion/[slug]
           <p className="mt-[15px] text-[16px] leading-[1.35] text-muted md:text-[17px]">{collection.description}</p>
         </div>
         <div className="relative aspect-[670/285] overflow-hidden">
-          <SmartImage src={collection.image} alt={collection.title} fill priority sizes="(min-width: 1024px) 670px, 100vw" className="object-cover" />
+          <SmartImage src={collection.image} alt={collection.title} fill preload sizes="(min-width: 1024px) 670px, 100vw" className="object-cover" />
         </div>
       </section>
 

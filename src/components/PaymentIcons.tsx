@@ -1,7 +1,7 @@
 // Por ahora solo se cobra por Yape/Plin y transferencia bancaria.
 const payments = [
   { label: "Yape", className: "bg-[#742284] text-white" },
-  { label: "Plin", className: "bg-[#00c1d5] text-white" },
+  { label: "Plin", className: "bg-[#00c1d5] text-[#003b46]" },
   { label: "Transf.", className: "bg-ocean text-white" },
 ];
 

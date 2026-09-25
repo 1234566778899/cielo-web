@@ -77,14 +77,16 @@ export function Hero() {
 
         {/* Móvil: carrusel horizontal con la siguiente tarjeta asomando, como la plantilla. */}
         <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:mt-[60px] lg:grid-cols-4">
-          {heroCards.map((card) => (
+          {heroCards.map((card, i) => (
             <div key={card.title} className="w-[85%] shrink-0 snap-start scroll-ml-5 sm:w-auto">
               <Link href={card.href} className="group relative block aspect-square overflow-hidden rounded-[5px]">
                 <SmartImage
                   src={card.image}
-                  alt={card.title}
+                  alt=""
                   fill
-                  sizes="(min-width: 1024px) 25vw, 50vw"
+                  preload={i === 0}
+                  fetchPriority={i === 0 ? "high" : undefined}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 85vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-[#023f60]/70" />

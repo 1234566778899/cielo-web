@@ -14,7 +14,7 @@ export function Features() {
         <div key={title} className="rounded-[5px] p-[15px] text-center shadow-[inset_0_0_0_1px_#dfdfdf] lg:h-[115px]">
           <Icon className="mx-auto size-8 text-cielo" strokeWidth={1.3} />
           <h3 className="mt-[7px] heading text-[19.8px] leading-[1.15] text-ink">{title}</h3>
-          <p className="mt-1 text-[14px] text-muted/75">{text}</p>
+          <p className="mt-1 text-[14px] text-muted">{text}</p>
         </div>
       ))}
     </section>

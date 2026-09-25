@@ -73,10 +73,11 @@ export function Footer() {
           {columns.map((col) => (
             <div key={col.title}>
               <h3 className="heading text-[15px]">{col.title}</h3>
-              <ul className="mt-[22px] space-y-[2.5px] text-[14px] leading-[1.5]">
+              <ul className="mt-[19px] text-[14px] leading-[1.5]">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <Link href={l.href} className="hover:underline">{l.label}</Link>
+                    {/* py-[3px]: objetivo táctil de al menos 24px de alto. */}
+                    <Link href={l.href} className="inline-block py-[3px] hover:underline">{l.label}</Link>
                   </li>
                 ))}
               </ul>

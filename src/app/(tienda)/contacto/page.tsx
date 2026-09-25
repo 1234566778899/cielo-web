@@ -31,11 +31,11 @@ export default function ContactPage() {
             <div key={title} className="rounded-[5px] p-5 shadow-[inset_0_0_0_1px_#dfdfdf]">
               <Icon className="size-8 text-cielo" strokeWidth={1.3} />
               <h2 className="heading mt-3 text-[22px] leading-[26px] tracking-normal text-ink">{title}</h2>
-              <p className="mt-1.5 text-[15px] leading-5 text-muted/75">{text}</p>
+              <p className="mt-1.5 text-[15px] leading-5 text-muted">{text}</p>
               <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="mt-4 block text-[15px] leading-5 text-ink hover:text-cielo">
                 {value}
               </a>
-              <p className="mt-4 text-[15px] leading-5 text-muted/75">{note}</p>
+              <p className="mt-4 text-[15px] leading-5 text-muted">{note}</p>
             </div>
           );
         })}

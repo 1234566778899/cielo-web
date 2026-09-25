@@ -12,7 +12,7 @@ export function ShopByCategory() {
           <li key={c.slug}>
             <Link href={`/coleccion/${c.slug}`} className="group block text-center">
               <span className="relative block aspect-square overflow-hidden rounded-full">
-                <SmartImage src={c.image} alt={c.name} fill sizes="14vw" className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                <SmartImage src={c.image} alt="" fill sizes="(min-width: 1024px) 14vw, (min-width: 640px) 25vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-110" />
               </span>
               <span className="mt-[15px] block heading text-[15px] tracking-normal text-ink">{c.name}</span>
             </Link>

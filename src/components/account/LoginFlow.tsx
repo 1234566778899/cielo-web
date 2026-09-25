@@ -39,7 +39,7 @@ export function LoginFlow() {
   return (
     <div className="flex min-h-screen flex-col items-center bg-white px-5">
       <header className="flex h-[92px] items-center">
-        <Logo className="h-11" priority />
+        <Logo className="h-11" preload />
       </header>
 
       <main className="flex w-full flex-1 items-center justify-center pb-16">
