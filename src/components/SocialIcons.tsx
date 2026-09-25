@@ -23,9 +23,9 @@ const icons = {
   ),
 };
 
-export function SocialIcons({ className = "" }: { className?: string }) {
+export function SocialIcons({ className = "", gap = "gap-7" }: { className?: string; gap?: string }) {
   return (
-    <ul className={`flex items-center gap-7 ${className}`}>
+    <ul className={`flex items-center ${gap} ${className}`}>
       {Object.entries(icons).map(([name, paths]) => (
         <li key={name}>
           <a href="#" aria-label={name} className="block transition-opacity hover:opacity-70">

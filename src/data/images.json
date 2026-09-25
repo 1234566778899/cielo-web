@@ -393,6 +393,14 @@
       "bg": "#d9d0ee",
       "label": "San Isidro",
       "prompt": "A customer holding a bouquet of artificial sunflowers inside a cozy gift shop full of flowers and teddy bears, warm light, lifestyle photo."
+    },
+    {
+      "key": "faq-hero",
+      "file": "faq-hero.svg",
+      "size": "1536x1024",
+      "bg": "#e9c9dc",
+      "label": "Preguntas frecuentes",
+      "prompt": "A florist's hands tying a ribbon around a bouquet of artificial pink roses on a wooden workbench, soft natural light, gift boxes and a small notebook with questions blurred in the background, warm lifestyle photo."
     }
   ]
 }

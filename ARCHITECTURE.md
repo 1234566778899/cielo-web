@@ -2,9 +2,10 @@
 
 ```
 cielo-online/
-├── src/ …            Tienda (Next.js 16) — clientes
-├── admin/            Panel de administración (Vite + React 19 + TS)
-└── supabase/         Base de datos, seguridad y workflows (compartidos)
+├── web/              Tienda (Next.js 16) — repo cielo-web, se despliega en Vercel
+│   ├── src/ …
+│   └── supabase/     Base de datos, seguridad y workflows (compartidos con el admin)
+└── admin/            Panel de administración (Vite + React 19 + TS) — repo cielo-admin
 ```
 
 ## Backend: módulos de comercio al estilo Medusa.js sobre Supabase
@@ -28,7 +29,7 @@ mediante **links** y se orquestan con **workflows**. Aquí se replica ese diseñ
 - **Instantáneas contables**: el pedido guarda precios, totales e IGV al momento de la compra,
   así los cambios de catálogo no alteran pedidos pasados.
 
-## Panel (`admin/`)
+## Panel (`../admin/`, repo cielo-admin)
 
 ```
 admin/src/
@@ -48,7 +49,7 @@ admin de Shopify, así que los componentes son propios y con la marca de Cielo.
 
 ## Escalar
 
-- Nuevos módulos (p. ej. suscripciones, reseñas): nueva migración + carpeta en `admin/src/modules`.
+- Nuevos módulos (p. ej. suscripciones, reseñas): nueva migración + carpeta en `admin/src/modules` (repo cielo-admin).
 - Pagos reales (Culqi, Mercado Pago, Niubiz): Edge Function que confirme el pago y llame a
   `admin_capture_payment` desde el webhook.
 - Correos (confirmación de pedido, envío): Edge Function disparada por `order_event`.

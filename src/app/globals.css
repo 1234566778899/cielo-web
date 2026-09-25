@@ -32,6 +32,19 @@ body {
   padding-inline: 20px;
 }
 
+/* Contenedor angosto de páginas de texto (envíos, preguntas frecuentes): 940px como la plantilla. */
+.container-narrow {
+  width: 100%;
+  max-width: 980px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+@media (min-width: 750px) and (max-width: 989px) {
+  .container-narrow {
+    padding-inline: 90px;
+  }
+}
+
 /* Títulos en Grandstander como en la plantilla: peso 600 y tracking -0.02em. */
 .heading {
   font-family: var(--font-grandstander);

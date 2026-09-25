@@ -4,24 +4,18 @@ import { site, whatsappUrl } from "@/lib/site";
 import { HeaderCart } from "./cart/HeaderCart";
 import { HeaderSearch } from "./search/HeaderSearch";
 import { Logo } from "./Logo";
-
-const nav: { label: string; href: string; dropdown?: boolean; badge?: string }[] = [
-  { label: "Flores", href: "/coleccion/flores" },
-  { label: "Regalos", href: "/coleccion/regalos", badge: "NUEVO" },
-  { label: "Por ocasión", href: "#", dropdown: true },
-  { label: "Para quién", href: "#", dropdown: true },
-  { label: "Arreglos", href: "/coleccion/arreglos" },
-  { label: "Peluches", href: "/coleccion/peluches" },
-  { label: "Temporada", href: "#", dropdown: true },
-];
+import { MobileMenu } from "./MobileMenu";
+import { mainNav as nav, secondaryNav } from "./nav";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-magenta text-white">
       <div className="container-page">
-        <div className="flex h-[81px] items-center gap-6 pt-[15px] lg:gap-[45px]">
-          <Logo />
-          <HeaderSearch />
+        {/* Móvil: menú + logo + cuenta/carrito y el buscador en una segunda fila. */}
+        <div className="flex flex-wrap items-center gap-x-2.5 pt-5 pb-[21px] md:h-[81px] md:flex-nowrap md:gap-6 md:pt-[15px] md:pb-0 lg:gap-[45px]">
+          <MobileMenu />
+          <Logo size="text-[24px] sm:text-[29px]" markClassName="text-navy max-sm:size-7" />
+          <HeaderSearch className="order-last mt-1.5 w-full md:order-none md:mt-0 md:w-auto md:flex-1" />
           <a
             href={whatsappUrl()}
             target="_blank"
@@ -46,22 +40,39 @@ export function Header() {
         <nav className="hidden h-[57px] items-center justify-between text-[15px] uppercase lg:flex">
           <ul className="flex items-center gap-5">
             {nav.map((item) => (
-              <li key={item.label} className="relative">
+              <li key={item.label} className="group relative">
                 {item.badge && (
                   <span className="absolute -top-[30px] left-1/2 -translate-x-1/2 rounded-[5px] bg-sun px-1.5 py-0.5 text-[11px] leading-tight text-ink after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-x-4 after:border-t-4 after:border-x-transparent after:border-t-sun">
                     {item.badge}
                   </span>
                 )}
-                <Link href={item.href} className="flex items-center gap-0.5 hover:opacity-80">
-                  {item.label}
-                  {item.dropdown && <ChevronDown className="size-3.5" strokeWidth={1.5} />}
-                </Link>
+                {item.children ? (
+                  <>
+                    <button className="flex items-center gap-0.5 uppercase hover:opacity-80" aria-haspopup="true">
+                      {item.label}
+                      <ChevronDown className="size-3.5" strokeWidth={1.5} />
+                    </button>
+                    {/* Submenú al pasar el mouse o con el foco del teclado. */}
+                    <ul className="invisible absolute top-full left-0 z-10 min-w-[220px] rounded-[5px] bg-white py-2 text-[14px] normal-case text-ink opacity-0 shadow-[0_8px_30px_rgba(0,0,0,.15)] transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                      {item.children.map((c) => (
+                        <li key={c.label}>
+                          <Link href={c.href} className="block px-4 py-2 hover:bg-[#fdf3f8] hover:text-magenta">{c.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <Link href={item.href} className="flex items-center gap-0.5 hover:opacity-80">
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
           <ul className="flex gap-5">
-            <li><Link href="/tiendas">Tiendas</Link></li>
-            <li><Link href="/contacto">Contacto</Link></li>
+            {secondaryNav.map((l) => (
+              <li key={l.label}><Link href={l.href}>{l.label}</Link></li>
+            ))}
           </ul>
         </nav>
       </div>

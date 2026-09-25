@@ -14,7 +14,7 @@ Base de datos compartida por la tienda (`/`) y el panel (`/admin`).
    ```
    Alternativa sin CLI: pega cada archivo de `migrations/` en orden en el **SQL Editor** y luego `seed.sql`.
 3. En **Authentication → Providers → Email** deja activado el login con correo y contraseña.
-4. Copia **Project URL** y **anon public key** (Settings → API) en `admin/.env.local`
+4. Copia **Project URL** y **anon public key** (Settings → API) en `admin/.env.local` (repo cielo-admin) y en `web/.env.local`
    (y en `.env.local` de la tienda cuando la conectemos).
 5. Abre el panel, crea tu usuario con **"Tengo una invitación"** o inicia sesión, y pulsa **"Reclamar tienda"**:
    el primer usuario queda como propietario. Los demás entran por invitación (Configuración → Usuarios).

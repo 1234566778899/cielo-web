@@ -23,7 +23,7 @@ function Highlight({ text, query }: { text: string; query: string }) {
   );
 }
 
-export function HeaderSearch() {
+export function HeaderSearch({ className = "" }: { className?: string }) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -65,7 +65,7 @@ export function HeaderSearch() {
           e.preventDefault();
           if (query.trim()) go(resultsHref);
         }}
-        className="relative z-[2] hidden flex-1 md:block"
+        className={`relative z-[2] ${className}`}
       >
         <input
           type="search"

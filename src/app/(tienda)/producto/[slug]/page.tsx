@@ -44,11 +44,13 @@ export default async function ProductPage(props: PageProps<"/producto/[slug]">) 
     <>
       <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: product.name }]} />
 
-      <div className="container-page grid gap-10 pt-10 lg:grid-cols-2 lg:gap-0">
-        <div className="lg:pr-[71px]">
+      {/* Móvil: galería → compra → descripción. Desktop: galería y descripción a la izquierda, compra a la derecha. */}
+      <div className="container-page grid gap-10 pt-10 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-x-0 lg:gap-y-[60px]">
+        <div className="lg:col-start-1 lg:row-start-1 lg:pr-[71px]">
           <ProductGallery images={product.gallery} alt={product.name} />
+        </div>
 
-          <div className="mt-[60px]">
+        <div className="order-last lg:order-none lg:col-start-1 lg:row-start-2 lg:pr-[71px]">
             <Accordion title="Descripción" defaultOpen>
               {product.description.map((p) => (
                 <p key={p} className="mb-5">{p}</p>
@@ -78,10 +80,9 @@ export default async function ProductPage(props: PageProps<"/producto/[slug]">) 
                 </p>
               )}
             </Accordion>
-          </div>
         </div>
 
-        <div>
+        <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <div className="border-b border-[#dfdfdf] pb-[30px]">
             <div className="flex items-start justify-between text-[13px] leading-4 text-muted">
               <p>SKU: {product.sku}</p>

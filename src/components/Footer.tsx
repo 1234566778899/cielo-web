@@ -8,7 +8,7 @@ import { SocialIcons } from "./SocialIcons";
 const toLinks = (labels: string[]) => labels.map((label) => ({ label, href: "#" }));
 
 const columns = [
-  { title: "Enlaces útiles", links: toLinks(["Cambios y devoluciones", "Opciones de envío", "Preguntas frecuentes", "Aviso de privacidad", "Términos y condiciones"]) },
+  { title: "Enlaces útiles", links: [{ label: "Cambios y devoluciones", href: "/preguntas-frecuentes" }, { label: "Opciones de envío", href: "/opciones-de-envio" }, { label: "Preguntas frecuentes", href: "/preguntas-frecuentes" }, ...toLinks(["Aviso de privacidad", "Términos y condiciones"])] },
   {
     title: "Categorías populares",
     links: [

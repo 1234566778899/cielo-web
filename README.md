@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cielo Online · Tienda
 
-## Getting Started
+Tienda online de flores artificiales y regalos (Perú, precios en soles con IGV).
+Next.js 16 + TypeScript + Tailwind 4 + Supabase.
 
-First, run the development server:
+- Panel de administración: repositorio **cielo-admin** (en local, `../admin`).
+- Base de datos, seguridad y workflows: [`supabase/README.md`](supabase/README.md).
+- Arquitectura: [`ARCHITECTURE.md`](ARCHITECTURE.md).
+
+## Desarrollo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env.local   # URL y anon/publishable key de Supabase
+npm install
+npm run dev                  # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Despliegue en Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Base de datos primero.** El build lee el catálogo de Supabase (`store_catalog()`), así que las migraciones deben estar aplicadas:
+   ```bash
+   supabase db push --db-url "postgresql://postgres.<ref>:<password>@aws-0-us-east-1.pooler.supabase.com:5432/postgres"
+   ```
+   Si faltan, el build falla con un mensaje que lo indica (mejor que publicar una tienda vacía).
+2. En Vercel: **Add New → Project → Import** el repositorio `cielo-web`. Framework: Next.js (se detecta solo); no hace falta cambiar comandos ni carpeta raíz.
+3. **Settings → Environment Variables** (Production y Preview):
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   | Variable | Valor |
+   |---|---|
+   | `NEXT_PUBLIC_SUPABASE_URL` | `https://<ref>.supabase.co` |
+   | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | la *publishable/anon key* (nunca la `service_role` ni la secret key) |
+   | `NEXT_PUBLIC_AUTH_GOOGLE` | `true` solo si activaste Google en Supabase Auth (opcional) |
 
-## Learn More
+4. **Supabase → Authentication → URL Configuration**:
+   - *Site URL*: `https://<tu-dominio>` (o el dominio `*.vercel.app`).
+   - *Redirect URLs*: `https://<tu-dominio>/auth/callback` y, para previews, `https://*-<tu-equipo>.vercel.app/auth/callback`.
+5. Deploy. Las páginas se regeneran solas cada 60 s (ISR), así que los cambios del admin (productos, precios, stock, tarifas) aparecen sin volver a desplegar.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Node.js 20.9 o superior (`engines` en `package.json`).

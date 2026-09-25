@@ -37,7 +37,6 @@
     "**/*.mts"
   ],
   "exclude": [
-    "admin",
     "node_modules",
     "supabase"
   ]

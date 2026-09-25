@@ -70,9 +70,10 @@ export function Hero() {
           Descubre flores artificiales y regalos hechos para sorprender a tu pareja, tus amigos y tu familia.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-[60px] lg:grid-cols-4">
+        {/* Móvil: carrusel horizontal con la siguiente tarjeta asomando, como la plantilla. */}
+        <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:mt-[60px] lg:grid-cols-4">
           {heroCards.map((card) => (
-            <div key={card.title}>
+            <div key={card.title} className="w-[85%] shrink-0 snap-start scroll-ml-5 sm:w-auto">
               <Link href={card.href} className="group relative block aspect-square overflow-hidden rounded-[5px]">
                 <SmartImage
                   src={card.image}

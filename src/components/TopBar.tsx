@@ -1,17 +1,19 @@
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { site } from "@/lib/site";
+import { infoNav as links } from "./nav";
 import { SocialIcons } from "./SocialIcons";
 
-const links = [
-  { label: "Opciones de envío", href: "#" },
-  { label: "Preguntas frecuentes", href: "#" },
-  { label: "Nosotros", href: "/tiendas" },
-  { label: "Contacto", href: "/contacto" },
-];
 
 export function TopBar() {
   return (
+    <>
+    {/* Móvil: solo redes sociales, como la plantilla. */}
+    <div className="bg-navy text-white md:hidden">
+      <div className="container-page flex h-[34px] items-center justify-center">
+        <SocialIcons gap="gap-[22px]" />
+      </div>
+    </div>
     <div className="hidden bg-navy text-white md:block">
       <div className="container-page flex h-[45px] items-center justify-between text-[15px]">
         <nav className="flex gap-4">
@@ -29,5 +31,6 @@ export function TopBar() {
         </div>
       </div>
     </div>
+    </>
   );
 }

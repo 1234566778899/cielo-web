@@ -94,11 +94,11 @@ export function CartPageContent() {
           <div className="space-y-5">
             <ul className="rounded-[5px] shadow-[0_0_0_1px_#dfdfdf]">
               {lines.map((l) => (
-                <li key={l.variantId} className="flex min-h-[165px] flex-wrap items-center gap-5 border-b border-[#dfdfdf] py-6 pr-10 pl-[25px] last:border-0 md:flex-nowrap">
+                <li key={l.variantId} className="flex min-h-[165px] flex-wrap items-center gap-x-5 gap-y-4 border-b border-[#dfdfdf] px-[15px] py-6 last:border-0 md:flex-nowrap md:gap-5 md:pr-10 md:pl-[25px]">
                   <Link href={`/producto/${l.product.slug}`} className="relative size-20 shrink-0 overflow-hidden rounded-[5px]">
                     <SmartImage src={l.product.image} alt={l.product.name} fill sizes="80px" className="object-contain" />
                   </Link>
-                  <div className="min-w-0 flex-1">
+                  <div className="min-w-0 flex-1 max-md:basis-[calc(100%-100px)]">
                     <p className="text-[12px] leading-[17px] text-muted">{l.product.brand}</p>
                     <Link href={`/producto/${l.product.slug}`} className="block text-[14px] leading-5 font-bold text-ink hover:underline">{l.product.name}</Link>
                     <p className="mt-[9px] text-[13px] leading-5 text-muted">
@@ -110,10 +110,10 @@ export function CartPageContent() {
                     <p className="mt-[15px] text-[13px] leading-4 text-muted"><span className="font-bold">SKU:</span> {l.variant.sku}</p>
                   </div>
                   <QuantityStepper value={l.quantity} onChange={(q) => setQuantity(l.variantId, q)} />
-                  <button onClick={() => remove(l.variantId)} aria-label={`Eliminar ${l.product.name}`} className="ml-[25px] text-muted hover:text-magenta">
+                  <button onClick={() => remove(l.variantId)} aria-label={`Eliminar ${l.product.name}`} className="text-muted hover:text-magenta md:ml-[25px]">
                     <Trash2 className="size-6" strokeWidth={1.2} />
                   </button>
-                  <p className="ml-px min-w-[56px] text-right text-[15px] text-muted">{formatPrice(l.lineTotal)}</p>
+                  <p className="ml-auto min-w-[56px] text-right text-[15px] text-muted md:ml-px">{formatPrice(l.lineTotal)}</p>
                 </li>
               ))}
             </ul>

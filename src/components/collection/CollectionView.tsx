@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import { ChevronDown, ChevronLeft, ChevronRight, LayoutGrid, List, Rows2, SlidersHorizontal } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, LayoutGrid, List, Rows2, SlidersHorizontal, X } from "lucide-react";
 import { filterGroups, type FilterKey } from "@/data/collections";
 import type { Product } from "@/lib/types";
 import { ProductCard } from "../ProductCard";
@@ -38,6 +38,8 @@ type Props = {
 
 export function CollectionView({ slug, products, query }: Props) {
   const [showFilters, setShowFilters] = useState(true);
+  // Móvil/tablet: los filtros van en un panel lateral.
+  const [drawer, setDrawer] = useState(false);
   const [selected, setSelected] = useState(emptySelection);
   const [sort, setSort] = useState<SortKey>("mas-vendidos");
   const [view, setView] = useState<View>("grid");
@@ -85,14 +87,7 @@ export function CollectionView({ slug, products, query }: Props) {
     setPage(1);
   };
 
-  const goTo = (n: number) => {
-    setPage(n);
-    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  return (
-    <div ref={topRef} className={`container-page grid scroll-mt-[160px] gap-[30px] pt-[25px] ${showFilters ? "lg:grid-cols-[278px_minmax(0,1fr)]" : ""}`}>
-      {showFilters && (
+  const sidebar = (
         <CollectionSidebar
           current={slug}
           selected={selected}
@@ -116,10 +111,69 @@ export function CollectionView({ slug, products, query }: Props) {
             },
           }}
         />
+  );
+
+  const goTo = (n: number) => {
+    setPage(n);
+    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  return (
+    <div ref={topRef} className={`container-page grid scroll-mt-[160px] gap-[30px] pt-[25px] ${showFilters ? "lg:grid-cols-[278px_minmax(0,1fr)]" : ""}`}>
+      {showFilters && <div className="hidden lg:block">{sidebar}</div>}
+
+      {drawer && (
+        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-label="Filtros">
+          <div onClick={() => setDrawer(false)} className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-y-0 left-0 flex w-[88%] max-w-[360px] flex-col bg-white shadow-xl">
+            <header className="flex h-16 shrink-0 items-center justify-between bg-magenta px-[15px] text-white">
+              <h2 className="heading text-[16.5px]">Filtros</h2>
+              <button onClick={() => setDrawer(false)} aria-label="Cerrar filtros" className="grid size-8 place-items-center rounded-[5px] border border-[#dfdfdf] bg-white text-muted">
+                <X className="size-4" strokeWidth={1.5} />
+              </button>
+            </header>
+            <div className="flex-1 overflow-y-auto p-5">{sidebar}</div>
+            <footer className="grid shrink-0 grid-cols-2 gap-3 border-t border-[#dfdfdf] p-[15px]">
+              <button onClick={clearAll} className="h-11 rounded-[5px] border border-[#dfdfdf] text-[14px] text-ink">Limpiar</button>
+              <button onClick={() => setDrawer(false)} className="h-11 rounded-[5px] bg-navy text-[14px] font-bold text-white">Ver {filtered.length} {filtered.length === 1 ? "producto" : "productos"}</button>
+            </footer>
+          </div>
+        </div>
       )}
 
       <div>
-        <div className="relative flex min-h-[76px] flex-wrap items-center justify-between gap-4 rounded-[5px] px-5 py-3 shadow-[inset_0_0_0_1px_#dfdfdf]">
+        {/* Móvil/tablet: botón de filtros + orden, como la plantilla. */}
+        <div className="rounded-[5px] p-[15px] shadow-[inset_0_0_0_1px_#dfdfdf] lg:hidden">
+          <div className="grid grid-cols-2 gap-5">
+            <button onClick={() => setDrawer(true)} className="flex h-[46px] items-center justify-center gap-2 rounded-[5px] border border-[#dfdfdf] bg-white text-[14px] text-muted">
+              <SlidersHorizontal className="size-4" strokeWidth={1.4} /> Filtros{activeCount > 0 ? ` (${activeCount})` : ""}
+            </button>
+            <span className="relative">
+              <select
+                aria-label="Ordenar por"
+                value={sort}
+                onChange={(e) => { setSort(e.target.value as SortKey); setPage(1); }}
+                className="h-[46px] w-full appearance-none rounded-[5px] border border-[#dfdfdf] bg-white pr-8 pl-[15px] text-[14px] text-muted"
+              >
+                {Object.entries(sorts).map(([key, s]) => (
+                  <option key={key} value={key}>{s.label}</option>
+                ))}
+              </select>
+              <ChevronDown className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 fill-muted text-muted" strokeWidth={1} />
+            </span>
+          </div>
+          <div className="mt-3 flex items-center justify-between gap-3">
+            <p className="text-[15px] text-ink">
+              {query ? `“${query}”: ` : ""}
+              {filtered.length} {filtered.length === 1 ? "producto" : "productos"}
+            </p>
+            {activeCount > 0 && (
+              <button onClick={clearAll} className="text-[13px] text-magenta underline underline-offset-4">Limpiar filtros</button>
+            )}
+          </div>
+        </div>
+
+        <div className="relative hidden min-h-[76px] flex-wrap items-center justify-between gap-4 rounded-[5px] px-5 py-3 shadow-[inset_0_0_0_1px_#dfdfdf] lg:flex">
           <button
             onClick={() => setShowFilters(!showFilters)}
             className="absolute -top-3.5 left-5 flex h-7 items-center gap-[5px] rounded-[5px] border border-[#dfdfdf] bg-white px-2.5 text-[13px] text-muted hover:text-ink"
@@ -183,7 +237,7 @@ export function CollectionView({ slug, products, query }: Props) {
             </button>
           </div>
         ) : view === "grid" ? (
-          <div className={`mt-5 grid grid-cols-2 gap-4 md:grid-cols-3 ${showFilters ? "lg:grid-cols-4" : "lg:grid-cols-5"}`}>
+          <div className={`mt-5 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 ${showFilters ? "lg:grid-cols-4" : "lg:grid-cols-5"}`}>
             {visible.map((p) => (
               <ProductCard key={p.id} product={p} showSku />
             ))}
