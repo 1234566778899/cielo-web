@@ -2,13 +2,12 @@
   "style": "Photorealistic, high detail, realistic artificial silk flowers. Brand color palette: soft sky blue, deep ocean blue, sunflower yellow and warm gold accents with lots of white; bright, airy, elegant and cheerful. No text, no letters, no logos, no watermark.",
   "images": [
     {
-      "key": "hero-bouquet",
-      "file": "hero-bouquet.webp",
-      "size": "1536x1024",
-      "background": "transparent",
-      "bg": "#9fd2f0",
-      "label": "Ramo héroe",
-      "prompt": "A large lush bouquet of artificial sunflowers, white roses and baby's breath with a few blue eucalyptus-like leaves, wrapped in cream paper with a sky-blue satin ribbon, next to an elegant open white gift box with a gold ribbon, a few yellow petals floating in the air, isolated on a fully transparent background, front view, premium cheerful look."
+      "key": "hero-mujer",
+      "file": "hero-mujer.webp",
+      "size": "1376x768",
+      "bg": "#1672ad",
+      "label": "Mujer feliz con ramos",
+      "prompt": "A joyful young Latin American woman (Peruvian), laughing with genuine happiness, holding two large bouquets of hand-crocheted wool yarn sunflowers and white roses with crochet leaves (visible yarn texture and stitches) wrapped in cream paper with sky-blue satin ribbons in her arms. She stands on the right third of the frame, framed from the waist up, her face in the upper half of the image, wearing a simple white blouse. Bright, airy, soft sky-blue backdrop with warm golden sunlight and soft bokeh; the left half is clean and uncluttered (deeper ocean blue towards the left edge) for white headline text. Wide lifestyle photo."
     },
     {
       "key": "hero-card-ramos",

@@ -1,67 +1,25 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { heroCards } from "@/data/catalog";
-import { HeroVideo } from "./HeroVideo";
+import { img } from "@/lib/images";
 import { SmartImage } from "./SmartImage";
-
-const bokeh = [
-  { top: "10%", left: "42%", size: 60 },
-  { top: "8%", left: "50%", size: 180 },
-  { top: "35%", left: "48%", size: 90 },
-  { top: "5%", left: "80%", size: 140 },
-  { top: "40%", left: "88%", size: 220 },
-  { top: "60%", left: "62%", size: 160 },
-];
-
-function PetalPattern() {
-  return (
-    <svg className="absolute inset-0 size-full opacity-[0.07]" aria-hidden>
-      <defs>
-        <pattern id="petals" width="170" height="150" patternUnits="userSpaceOnUse">
-          {[
-            [30, 40],
-            [115, 105],
-          ].map(([x, y]) => (
-            <g key={x} transform={`translate(${x} ${y}) rotate(${x})`} fill="#fff">
-              {[0, 72, 144, 216, 288].map((r) => (
-                <ellipse key={r} cx="0" cy="-7" rx="4.5" ry="7" transform={`rotate(${r})`} />
-              ))}
-            </g>
-          ))}
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#petals)" />
-    </svg>
-  );
-}
-
-/** Cielo del logo: azul océano a la izquierda (donde va el texto blanco), celeste a la derecha y un brillo dorado de girasol detrás del ramo. */
-const heroBackground = [
-  "radial-gradient(ellipse 22% 60% at 66% 18%, rgba(255,236,176,.75), rgba(255,236,176,0) 70%)",
-  "radial-gradient(ellipse 30% 70% at 58% 55%, rgba(246,193,42,.28), rgba(246,193,42,0) 70%)",
-  "linear-gradient(90deg, #035580 0%, #0f5a8a 20%, #1672ad 38%, #3d91c9 56%, #72b6e2 74%, #9fd2f0 88%, #b8def5 100%)",
-].join(",");
 
 export function Hero() {
   return (
     <section className="relative">
-      <div className="absolute inset-x-0 top-0 h-[calc(100%-230px)] overflow-hidden lg:h-[560px]" style={{ background: heroBackground }}>
-        <PetalPattern />
-        {bokeh.map((b, i) => (
-          <span
-            key={i}
-            className="absolute rounded-full bg-[radial-gradient(circle,rgba(255,255,255,.2),rgba(255,255,255,.04)_70%)]"
-            style={{ top: b.top, left: b.left, width: b.size, height: b.size }}
-          />
-        ))}
-        {/* Desde 1024 px el ramo va en video (generado con Veo a partir de hero-bouquet); en móvil se queda el degradado. */}
-        <HeroVideo
-          poster="/videos/hero-poster.webp"
-          sources={[
-            { src: "/videos/hero.webm", type: "video/webm" },
-            { src: "/videos/hero.mp4", type: "video/mp4" },
-          ]}
+      <div className="absolute inset-x-0 top-0 h-[calc(100%-230px)] overflow-hidden bg-ocean lg:h-[560px]">
+        {/* Es el elemento LCP en móvil: se precarga con prioridad alta. */}
+        <SmartImage
+          src={img("hero-mujer")}
+          alt=""
+          fill
+          preload
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover object-[72%_22%] lg:object-[center_12%]"
         />
+        {/* Velo azul océano para que el texto blanco se lea: desde arriba en móvil y desde la izquierda en escritorio. */}
+        <div className="absolute inset-0 bg-gradient-to-b from-ocean/85 via-ocean/55 to-ocean/10 lg:bg-gradient-to-r lg:from-ocean/85 lg:via-ocean/35 lg:to-transparent" />
       </div>
 
       <div className="container-page relative pt-16 lg:pt-[140px]">
@@ -85,7 +43,6 @@ export function Hero() {
                   alt=""
                   fill
                   preload={i === 0}
-                  fetchPriority={i === 0 ? "high" : undefined}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 85vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />

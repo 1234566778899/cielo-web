@@ -14,7 +14,7 @@ export function Header() {
         {/* Móvil: menú + logo + cuenta/carrito y el buscador en una segunda fila. */}
         <div className="flex flex-wrap items-center gap-x-2.5 pt-5 pb-[21px] md:h-[81px] md:flex-nowrap md:gap-6 md:pt-[15px] md:pb-0 lg:gap-[45px]">
           <MobileMenu />
-          <Logo className="h-9 sm:h-11 md:h-[50px]" preload />
+          <Logo className="h-[30px] sm:h-11 md:h-[50px]" preload />
           <HeaderSearch className="order-last mt-1.5 w-full md:order-none md:mt-0 md:w-auto md:flex-1" />
           <a
             href={whatsappUrl()}
@@ -30,8 +30,9 @@ export function Header() {
             </span>
             <ChevronDown className="mb-4 ml-[5px] size-[18px]" strokeWidth={1.5} />
           </a>
-          <div className="ml-auto flex items-center gap-2.5 xl:ml-0">
-            <Link href="/cuenta" aria-label="Mi cuenta" className="grid size-[46px] place-items-center rounded-[5px] border border-ocean/25 hover:bg-mist">
+          {/* En móvil la lupa (HeaderSearch) empuja este grupo a la derecha y "Mi cuenta" pasa al menú hamburguesa. */}
+          <div className="flex items-center gap-2.5 md:ml-auto xl:ml-0">
+            <Link href="/cuenta" aria-label="Mi cuenta" className="hidden size-[46px] place-items-center rounded-[5px] border border-ocean/25 hover:bg-mist md:grid">
               <User className="size-5" strokeWidth={1.4} />
             </Link>
             <HeaderCart />

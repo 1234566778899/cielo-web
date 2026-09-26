@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Menu, MessageCircle, X } from "lucide-react";
+import { ChevronDown, Menu, MessageCircle, User, X } from "lucide-react";
 import { site, whatsappUrl } from "@/lib/site";
 import { infoNav, mainNav, secondaryNav } from "./nav";
 
@@ -109,11 +109,18 @@ export function MobileMenu() {
               ))}
             </ul>
 
+            <Link
+              href="/cuenta"
+              onClick={() => setOpen(false)}
+              className="mt-8 flex h-[46px] items-center gap-2 rounded-[5px] border border-[#dfdfdf] px-[15px] text-[14px] text-ink"
+            >
+              <User className="size-4 text-cielo" strokeWidth={1.6} /> Mi cuenta
+            </Link>
             <a
               href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 flex h-[46px] items-center justify-between rounded-[5px] border border-[#dfdfdf] px-[15px] text-[14px] text-ink"
+              className="mt-3 flex h-[46px] items-center justify-between rounded-[5px] border border-[#dfdfdf] px-[15px] text-[14px] text-ink"
             >
               <span className="flex items-center gap-2"><MessageCircle className="size-4 text-cielo" strokeWidth={1.6} /> {site.phoneDisplay}</span>
               <span className="text-[12px] text-muted">{site.hours}</span>

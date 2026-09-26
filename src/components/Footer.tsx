@@ -26,7 +26,7 @@ const columns = [
 function Newsletter() {
   return (
     <div className="container-page relative">
-      <div className="grid items-center gap-8 rounded-[5px] bg-cielo px-6 py-10 text-white shadow-[0_0_20px_1px_rgba(0,0,0,.1)] md:px-20 lg:h-[229px] lg:grid-cols-[minmax(0,680px)_540px] lg:justify-between lg:py-0">
+      <div className="grid grid-cols-1 items-center gap-8 rounded-[5px] bg-cielo px-6 py-10 text-white shadow-[0_0_20px_1px_rgba(0,0,0,.1)] md:px-20 lg:h-[229px] lg:grid-cols-[minmax(0,680px)_540px] lg:justify-between lg:py-0">
         <div>
           <h2 className="heading text-[24px] leading-[1.18] md:text-[26.4px]">Flores, detalles y sorpresas.</h2>
           <p className="mt-1.5 text-[17px] leading-[1.2] md:text-[19px]">

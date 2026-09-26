@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import { ChevronRight, Search, X } from "lucide-react";
 import { formatPrice, normalize } from "@/lib/format";
 import { searchProducts, searchSuggestions } from "@/lib/catalog/queries";
@@ -27,6 +28,9 @@ export function HeaderSearch({ className = "" }: { className?: string }) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
+  // Móvil (< md): solo se ve la lupa; al tocarla se despliega el campo bajo la fila del header.
+  const [expanded, setExpanded] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   const deferred = useDeferredValue(query);
   const wrapperRef = useRef<HTMLFormElement>(null);
 
@@ -48,16 +52,46 @@ export function HeaderSearch({ className = "" }: { className?: string }) {
     };
   }, [showPanel]);
 
+  useEffect(() => {
+    if (!expanded) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setExpanded(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [expanded]);
+
   const go = (href: string) => {
     setOpen(false);
+    setExpanded(false);
     router.push(href);
+  };
+
+  const toggle = () => {
+    if (expanded) {
+      setExpanded(false);
+      setOpen(false);
+    } else {
+      // Mostrar y enfocar en el mismo toque: iOS solo abre el teclado si el foco llega dentro del gesto.
+      flushSync(() => setExpanded(true));
+      inputRef.current?.focus();
+    }
   };
   const resultsHref = `/buscar?q=${encodeURIComponent(query.trim())}`;
 
   return (
     <>
       {showPanel && <div aria-hidden className="fixed inset-0 z-[1] bg-black/50" />}
+      <button
+        type="button"
+        onClick={toggle}
+        aria-label={expanded ? "Cerrar búsqueda" : "Buscar"}
+        aria-expanded={expanded}
+        aria-controls="header-search"
+        className={`relative z-[2] ml-auto grid size-[46px] shrink-0 place-items-center rounded-[5px] border border-ocean/25 md:hidden ${expanded ? "bg-mist" : "hover:bg-mist"}`}
+      >
+        {expanded ? <X className="size-5" strokeWidth={1.5} /> : <Search className="size-5" strokeWidth={1.5} />}
+      </button>
       <form
+        id="header-search"
         ref={wrapperRef}
         role="search"
         action="/buscar"
@@ -65,9 +99,10 @@ export function HeaderSearch({ className = "" }: { className?: string }) {
           e.preventDefault();
           if (query.trim()) go(resultsHref);
         }}
-        className={`relative z-[2] ${className}`}
+        className={`relative z-[2] ${expanded ? "" : "max-md:hidden"} ${className}`}
       >
         <input
+          ref={inputRef}
           type="search"
           name="q"
           value={query}
@@ -98,7 +133,7 @@ export function HeaderSearch({ className = "" }: { className?: string }) {
             {products.length === 0 && suggestions.collections.length === 0 ? (
               <p className="px-[15px] py-6 text-[15px] text-muted">No se encontraron resultados para “{q}”.</p>
             ) : (
-              <div className="grid max-h-[calc(100vh-220px)] grid-cols-[279px_minmax(0,1fr)] overflow-y-auto">
+              <div className="grid max-h-[calc(100vh-220px)] overflow-y-auto md:grid-cols-[279px_minmax(0,1fr)]">
                 <div className="px-[15px] pb-4">
                   <h3 className="heading flex h-[41px] items-end border-b border-[#dfdfdf] pb-[5px] text-[16.5px] tracking-normal">Sugerencias</h3>
                   <ul className="mt-2.5">
