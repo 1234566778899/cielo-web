@@ -77,7 +77,7 @@ export function CartPageContent() {
     <div className="container-page pt-[49px]">
       <div className="flex items-center justify-between">
         <h1 className="heading text-[30px] leading-[1.18] text-ink md:text-[35.2px]">Tu carrito</h1>
-        <Link href="/" className="text-[15px] font-bold text-cielo hover:underline">Seguir comprando</Link>
+        <Link href="/" className="inline-block py-1.5 text-[15px] font-bold text-cielo hover:underline">Seguir comprando</Link>
       </div>
 
       {!ready ? (
