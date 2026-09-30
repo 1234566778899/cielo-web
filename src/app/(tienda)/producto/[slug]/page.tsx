@@ -117,8 +117,8 @@ export default async function ProductPage(props: PageProps<"/producto/[slug]">) 
             ))}
           </ul>
 
-          <div className="mt-[30px] flex gap-[15px] rounded-[5px] bg-cielo p-5 text-white">
-            <Info className="size-10 shrink-0" strokeWidth={1.2} />
+          <div className="mt-[30px] flex gap-[15px] rounded-[5px] bg-mist p-5 text-ink">
+            <Info className="size-10 shrink-0 text-cielo" strokeWidth={1.2} />
             <div>
               <h2 className="heading text-[16.5px] leading-5">Métodos de pago</h2>
               <PaymentIcons size="sm" className="mt-[9px]" />

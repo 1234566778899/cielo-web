@@ -39,8 +39,8 @@ export function Header() {
           </div>
         </div>
       </div>
-      {/* Menú principal en una franja celeste, bajo el logo. */}
-      <div className="hidden bg-cielo text-white lg:block">
+      {/* Menú principal en una franja crema, bajo el logo. */}
+      <div className="hidden border-y border-line bg-mist text-ink lg:block">
         <nav className="container-page flex h-[57px] items-center justify-between text-[15px] uppercase">
           <ul className="flex items-center gap-5">
             {nav.map((item) => (

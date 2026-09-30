@@ -126,7 +126,7 @@ export function CollectionView({ slug, products, query }: Props) {
         <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-label="Filtros">
           <div onClick={() => setDrawer(false)} className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-y-0 left-0 flex w-[88%] max-w-[360px] flex-col bg-white shadow-xl">
-            <header className="flex h-16 shrink-0 items-center justify-between bg-cielo px-[15px] text-white">
+            <header className="flex h-16 shrink-0 items-center justify-between bg-ocean px-[15px] text-white">
               <h2 className="heading text-[16.5px]">Filtros</h2>
               <button onClick={() => setDrawer(false)} aria-label="Cerrar filtros" className="grid size-8 place-items-center rounded-[5px] border border-[#dfdfdf] bg-white text-muted">
                 <X className="size-4" strokeWidth={1.5} />

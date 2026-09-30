@@ -12,7 +12,7 @@ export function ProductCard({ product, className = "", footer, showSku = false }
   return (
     <article className={`group relative flex flex-col rounded-[5px] bg-white p-[15px] shadow-[inset_0_0_0_1px_#dfdfdf] ${className}`}>
       {onSale && (
-        <span className="absolute top-2.5 right-[11px] z-10 grid h-[22px] place-items-center rounded-[20px] border border-cielo bg-cielo px-2 text-[12px] leading-none text-white">
+        <span className="absolute top-2.5 right-[11px] z-10 grid h-[22px] place-items-center rounded-[20px] border border-gold-dark bg-gold-dark px-2 text-[12px] leading-none text-white">
           -{discount}%
         </span>
       )}

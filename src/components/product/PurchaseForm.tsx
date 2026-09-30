@@ -45,7 +45,7 @@ export function PurchaseForm({ product }: { product: Product }) {
       </div>
 
       {onSale && (
-        <span className="mt-[30px] inline-grid h-8 place-items-center rounded-[20px] bg-cielo px-5 text-[13px] font-bold text-white">
+        <span className="mt-[30px] inline-grid h-8 place-items-center rounded-[20px] bg-gold-dark px-5 text-[13px] font-bold text-white">
           Ahorra {discount}%
         </span>
       )}

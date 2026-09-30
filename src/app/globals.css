@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  /* Paleta del logo Mar del Cielo: azul océano, celeste, dorado y amarillo girasol. */
-  --color-ocean: #035580;
-  --color-ocean-dark: #023f60;
-  --color-cielo: #1672ad;
-  --color-cielo-dark: #0f5a8a;
+  /* Paleta basada en el logo Mar del Cielo, con neutros cálidos de base (regla 60-30-10):
+     crema para fondos, azul marino para bloques y botones principales, azul como acento
+     (enlaces, íconos) y dorado para destacar. Todos los pares texto/fondo cumplen AA. */
+  --color-ocean: #1f2d3a;
+  --color-ocean-dark: #141e27;
+  --color-cielo: #1d5f8a;
+  --color-cielo-dark: #164a6c;
   --color-gold: #bf8a2f;
   --color-gold-dark: #9a6b1f;
+  --color-gold-deep: #7f5718;
   --color-sky: #9fd2f0;
-  --color-mist: #eef6fc;
+  --color-mist: #faf6ef;
   --color-sun: #f6c12a;
   /* Verde y rojo con contraste AA (≥ 4.5:1) sobre blanco. */
   --color-stock: #2e7d00;

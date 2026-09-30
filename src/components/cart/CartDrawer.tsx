@@ -35,13 +35,13 @@ export function CartDrawer() {
         aria-label="Tu carrito"
         className={`absolute top-0 right-0 flex h-full w-full max-w-[400px] flex-col overflow-hidden bg-white shadow-[0_2px_10px_rgba(0,0,0,.3)] transition-transform duration-300 sm:top-[15px] sm:right-[15px] sm:h-[calc(100%-30px)] sm:rounded-[5px] ${isOpen ? "translate-x-0" : "translate-x-[calc(100%+20px)]"}`}
       >
-        <header className="flex h-16 shrink-0 items-center justify-between bg-cielo px-[15px] text-white">
+        <header className="flex h-16 shrink-0 items-center justify-between bg-ocean px-[15px] text-white">
           <h2 className="heading text-[16.5px]">Tu carrito</h2>
           <button onClick={close} aria-label="Cerrar carrito" className="grid size-8 place-items-center rounded-[5px] border border-[#dfdfdf] bg-white text-muted">
             <X className="size-4" strokeWidth={1.5} />
           </button>
         </header>
-        {freeShipping.message && <p className="flex h-[41px] shrink-0 items-center bg-cielo-dark px-[15px] text-[13px] text-white">{freeShipping.message}</p>}
+        {freeShipping.message && <p className="flex h-[41px] shrink-0 items-center border-b border-line bg-mist px-[15px] text-[13px] text-ink">{freeShipping.message}</p>}
 
         <div className="flex-1 overflow-y-auto p-[15px]">
           {lines.length === 0 ? (

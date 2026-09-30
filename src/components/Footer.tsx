@@ -26,7 +26,7 @@ const columns = [
 function Newsletter() {
   return (
     <div className="container-page relative">
-      <div className="grid grid-cols-1 items-center gap-8 rounded-[5px] bg-cielo px-6 py-10 text-white shadow-[0_0_20px_1px_rgba(0,0,0,.1)] md:px-20 lg:h-[229px] lg:grid-cols-[minmax(0,680px)_540px] lg:justify-between lg:py-0">
+      <div className="grid grid-cols-1 items-center gap-8 rounded-[5px] bg-mist px-6 py-10 text-ink shadow-[0_0_20px_1px_rgba(0,0,0,.1)] md:px-20 lg:h-[229px] lg:grid-cols-[minmax(0,680px)_540px] lg:justify-between lg:py-0">
         <div>
           <h2 className="heading text-[24px] leading-[1.18] md:text-[26.4px]">Flores, detalles y sorpresas.</h2>
           <p className="mt-1.5 text-[17px] leading-[1.2] md:text-[19px]">
@@ -34,9 +34,9 @@ function Newsletter() {
           </p>
         </div>
         <form>
-          <div className="flex h-14 rounded-[5px] border border-cielo-dark bg-white p-[3px]">
+          <div className="flex h-14 rounded-[5px] border border-line bg-white p-[3px]">
             <input type="email" required placeholder="Tu correo" className="min-w-0 flex-1 px-3.5 text-[14px] text-ink placeholder:text-muted focus:outline-none" />
-            <button className="h-full w-[120px] rounded-[5px] bg-cielo-dark text-[14px] font-bold transition-colors hover:bg-ocean">Suscribirme</button>
+            <button className="h-full w-[120px] rounded-[5px] bg-ocean text-[14px] font-bold text-white transition-colors hover:bg-ocean-dark">Suscribirme</button>
           </div>
           <label className="mt-3 flex items-center gap-2.5 text-[15px]">
             <input type="checkbox" className="size-4 accent-ocean" />
@@ -50,7 +50,7 @@ function Newsletter() {
 
 export function Footer() {
   return (
-    <footer className="mt-[60px] bg-[linear-gradient(#fff_0_156px,var(--color-cielo)_156px_189px,var(--color-ocean)_189px)] text-white">
+    <footer className="mt-[60px] bg-[linear-gradient(#fff_0_156px,var(--color-ocean)_156px)] text-white">
       <Newsletter />
       <div className="container-page pt-[61px]">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[240px_240px_240px_240px_382px] lg:justify-between lg:gap-5">

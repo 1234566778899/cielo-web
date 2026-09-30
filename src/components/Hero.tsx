@@ -46,7 +46,7 @@ export function Hero() {
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 85vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-[#023f60]/70" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-ocean-dark/70" />
                 <h2 className="heading absolute bottom-5 left-5 text-[16.5px] tracking-normal text-white">{card.title}</h2>
               </Link>
               <p className="mt-5 text-[14px] leading-[1.4] text-muted">{card.text}</p>

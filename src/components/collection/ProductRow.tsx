@@ -15,7 +15,7 @@ export function ProductRow({ product, compact = false }: { product: Product; com
       <Link href={`/producto/${product.slug}`} className={`relative shrink-0 overflow-hidden ${compact ? "size-20" : "size-[200px]"}`}>
         <SmartImage src={product.image} alt={product.name} fill sizes={compact ? "80px" : "200px"} className="object-contain transition-transform duration-300 group-hover:scale-105" />
         {onSale && !compact && (
-          <span className="absolute top-0 right-0 grid h-[22px] place-items-center rounded-[20px] bg-cielo px-2 text-[12px] leading-none text-white">-{discount}%</span>
+          <span className="absolute top-0 right-0 grid h-[22px] place-items-center rounded-[20px] bg-gold-dark px-2 text-[12px] leading-none text-white">-{discount}%</span>
         )}
       </Link>
 
